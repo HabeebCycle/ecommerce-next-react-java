@@ -8,8 +8,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "antd": "^4.6.6",
+    "axios": "^0.20.0",
     "next": "9.5.3",
+    "next-redux-wrapper": "^6.0.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "sass": "^1.26.12"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-plugin-react": "^7.21.3",
+    "prettier": "^2.1.2"
   }
 }

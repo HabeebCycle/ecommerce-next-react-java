@@ -1,0 +1,105 @@
+{
+    "imageSwatcher": {
+        "id": "99",
+        "thumbnail": "/static/img/products/shop/1.jpg",
+        "title": "Sleeve Linen Blend Caro Pane Shirt",
+        "variants": [
+            {
+                "id": "1",
+                "title": "Blue",
+                "price": "29.39",
+                "image": "/static/img/products/detail/image-swatches/small-1.jpg",
+                "thumbnail": [
+                    {
+                        "id": "1",
+                        "image": "/static/img/products/detail/image-swatches/1.jpg"
+                    },
+                    {
+                        "id": "2",
+                        "image": "/static/img/products/detail/image-swatches/2.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "title": "Bold Blue",
+                "price": "32.29",
+                "image": "/static/img/products/detail/image-swatches/small-2.jpg",
+                "thumbnail": [
+                    {
+                        "id": "1",
+                        "image": "/static/img/products/detail/image-swatches/2.jpg"
+                    },
+                    {
+                        "id": "2",
+                        "image": "/static/img/products/detail/image-swatches/3.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "title": "Light Pink",
+                "price": "35.59",
+                "image": "/static/img/products/detail/image-swatches/small-3.jpg",
+                "thumbnail": [
+                    {
+                        "id": "1",
+                        "image": "/static/img/products/detail/image-swatches/3.jpg"
+                    },
+                    {
+                        "id": "2",
+                        "image": "/static/img/products/detail/image-swatches/2.jpg"
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Light Pink",
+                "price": "35.59",
+                "image": "/static/img/products/detail/image-swatches/small-4.jpg",
+                "thumbnail": [
+                    {
+                        "id": "1",
+                        "image": "/static/img/products/detail/image-swatches/4.jpg"
+                    },
+                    {
+                        "id": "2",
+                        "image": "/static/img/products/detail/image-swatches/2.jpg"
+                    }
+                ]
+            }
+        ],
+        "vendor": "Go Pro",
+        "price": "29.39",
+        "sale": "false",
+        "categories": [
+            {
+                "id": "1",
+                "value": "phone",
+                "name": "Phones & Accessories"
+            }
+        ],
+
+        "brand": [
+            {
+                "id": "1",
+                "value": "apple",
+                "text": "Apple"
+            }
+        ],
+        "size": [
+            {
+                "id": "1",
+                "value": "s"
+            },
+            {
+                "id": "2",
+                "value": "m"
+            },
+            {
+                "id": "3",
+                "value": "l"
+            }
+        ]
+    }
+}

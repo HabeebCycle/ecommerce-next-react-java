@@ -1,0 +1,104 @@
+#homepage-2 {
+    a {
+        &:hover {
+            color: $color-autopart;
+        }
+    }
+    .ps-btn,
+    button.ps-btn {
+        background-color: $color-autopart;
+        color: #ffffff;
+        &:hover {
+            background-color: darken($color-autopart, 5%);
+        }
+    }
+
+    .ps-carousel {
+        .slick-arrow {
+            &:hover {
+                background-color: $color-autopart;
+                color: #fff;
+            }
+        }
+    }
+
+    .ps-block--category-auto-part {
+        &:hover {
+            border-color: $color-autopart;
+        }
+    }
+
+    .ps-block--deal-hot {
+        border-color: $color-autopart;
+        .ps-block__navigation {
+            a {
+                &:hover {
+                    border-color: $color-autopart;
+                }
+            }
+        }
+    }
+
+    .ps-deal-hot {
+        padding: 50px 0;
+    }
+
+    .ps-product {
+        .ps-product__actions {
+            li {
+                a {
+                    &:hover {
+                        background-color: $color-autopart;
+                        i {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ps-home-promotions {
+        padding-bottom: 50px;
+        @include media('<sm') {
+            padding-bottom: 30px;
+        }
+        @include media('<xs') {
+            padding-bottom: 20px;
+        }
+    }
+
+    .ps-block--testimonial {
+        .ps-block__content {
+            i {
+                color: $color-autopart;
+            }
+        }
+    }
+
+    .ps-block--site-features {
+        i {
+            color: $color-autopart;
+        }
+    }
+
+    .ps-site-features {
+        border-top: 1px solid #e1e1e1;
+
+        .ps-block--site-features {
+            padding: 50px 0;
+            border-bottom: 1px solid #e1e1e1;
+        }
+    }
+
+    .ps-top-categories {
+        padding: 70px 0 50px;
+
+        @include media('<sm') {
+            padding: 50px 0 30px;
+        }
+        @include media('<xs') {
+            padding: 50px 0 30px;
+        }
+    }
+}

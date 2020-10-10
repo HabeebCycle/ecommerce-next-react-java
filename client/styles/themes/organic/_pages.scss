@@ -1,0 +1,177 @@
+#homepage-9 {
+    a {
+        &:hover {
+            color: $color-organic;
+        }
+    }
+
+    .ps-btn,
+    button.ps-btn {
+        background-color: $color-organic;
+        color: #ffffff;
+        &:hover {
+            background-color: darken($color-organic, 5%);
+        }
+    }
+
+    .ps-btn {
+        color: #fff;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .ps-carousel {
+        .slick-arrow {
+            &:hover {
+                background-color: $color-organic;
+                color: #fff;
+            }
+        }
+    }
+
+    .ps-product {
+        .ps-product__title {
+            &:hover {
+                color: $color-organic;
+            }
+        }
+
+        .ps-product__actions {
+            li {
+                a {
+                    &:hover {
+                        background-color: $color-organic;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+
+    .ps-product--hot-deal {
+        .ps-product__thumbnail {
+            .ps-product__variants {
+                .item.slick-current {
+                    border-color: $color-organic;
+                }
+            }
+        }
+
+        .ps-countdown {
+            li {
+                span {
+                    color: $color-organic;
+                }
+            }
+        }
+
+        .product__processs-bar {
+            .ps-progress span {
+                background-color: $color-organic;
+            }
+        }
+    }
+
+    .ps-block--deal-hot {
+        border-color: $color-organic;
+        .ps-block__navigation {
+            > * {
+                &:hover {
+                    border-color: $color-organic;
+                }
+            }
+        }
+    }
+
+    .ps-block--testimonial {
+        .ps-block__content {
+            i {
+                color: $color-organic;
+            }
+        }
+    }
+
+
+
+    .ps-site-features {
+        padding: 50px 0;
+
+        .ps-block--site-features {
+            i {
+                color: $color-organic;
+            }
+        }
+    }
+
+    .ps-top-categories {
+        padding-bottom: 30px;
+
+        .ps-block--category {
+            &:hover {
+                border-color: $color-organic;
+            }
+        }
+    }
+
+    .ps-product-list {
+        .ps-section__header {
+            h3 {
+                font-size: 20px;
+            }
+        }
+
+        .row {
+            margin: 0;
+
+            > * {
+                padding: 0;
+            }
+        }
+
+        .ps-product {
+            margin-bottom: 30px;
+        }
+    }
+
+    .ps-deal-hot {
+        padding: 50px 0;
+    }
+
+    .ps-home-blog {
+        margin-bottom: 40px;
+        padding-top: 60px;
+    }
+
+    .ps-footer {
+        border-top: 1px solid #e1e1e1;
+        background-color: #f8f8f8;
+
+        .ps-form--newletter {
+            .form-group--nest {
+                button {
+                    background-color: $color-organic;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1680px) {
+        .ps-product-list {
+            .row {
+                .col-xl-3 {
+                    max-width: calc(100% / 5);
+                }
+            }
+        }
+        .ps-top-categories {
+            .row {
+                .col-xl-2 {
+                    max-width: calc(100% / 6);
+                }
+            }
+        }
+    }
+}

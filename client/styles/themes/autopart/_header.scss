@@ -1,0 +1,200 @@
+.menu--autopart {
+    > li {
+        > a {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+}
+
+.header--autopart {
+    .ps-form--quick-search {
+        button {
+            background-color: $color-autopart;
+            color: #ffffff;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .ps-form__categories {
+            border: 1px solid #e1e1e1;
+            border-right: none;
+        }
+
+    }
+
+    .menu--product-categories {
+        .menu__toggle {
+            span {
+                display: none;
+            }
+        }
+
+        .menu__content {
+            left: auto;
+            right: -10px;
+            padding-top: 0;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                top: -7px;
+                right: 30px;
+                width: 16px;
+                height: 16px;
+                border-left: 1px solid #e1e1e1;
+                border-top: 1px solid #e1e1e1;
+                background-color: #ffffff;
+                @include transform(rotate(45deg));
+                @include transform-origin(50% 50%);
+            }
+        }
+
+        .menu--dropdown {
+            > li {
+                &:hover {
+                    background-color: #fff;
+
+                    a {
+                        color: $color-autopart;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .menu__content {
+                @include transform(translateY(25px));
+            }
+        }
+    }
+
+    .header__extra {
+        span {
+            background-color: $color-autopart;
+
+            i {
+                color: #ffffff;
+            }
+        }
+
+        &:hover {
+            > i {
+                color: $color-autopart;
+            }
+
+            span {
+                color: $color-autopart;
+            }
+        }
+    }
+
+    .menu {
+        > li {
+            > a {
+                padding: 15px 20px;
+                font-weight: 600;
+                color: $color-heading;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: $color-autopart;
+                }
+            }
+
+            &:first-child {
+                > a {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    .navigation {
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+    }
+
+    &.header--sticky {
+        .menu--product-categories {
+            .menu__toggle {
+                span {
+                    display: block;
+                }
+            }
+
+            .menu__content {
+                &:before {
+                    right: auto;
+                    left: 55px;
+                }
+            }
+
+            &:hover {
+                .menu__content {
+                    @include transform(translateY(15px));
+                }
+            }
+        }
+
+        .header__top {
+            position: relative;
+        }
+
+        .header__content {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            background-color: #ffffff;
+        }
+    }
+
+    @include media('<lg') {
+        display: none;
+    }
+}
+
+.header--mobile {
+    &.autopart {
+        background-color: #fff;
+
+        .ps-cart--mini {
+            text-align: left;
+        }
+
+        .ps-search--mobile {
+            background-color: $color-autopart;
+        }
+
+        &.header--sticky {
+            .navigation--mobile {
+                background-color: #ffffff;
+            }
+        }
+    }
+}
+
+.navigation--list {
+    .navigation__item {
+        &.active,
+        &:focus,
+        &:active,
+        &:hover {
+            i,
+            span {
+                color: $color-autopart;
+            }
+        }
+    }
+}
+
+.ps-panel--sidebar {
+    .ps-panel__header {
+        background-color: $color-autopart;
+    }
+}

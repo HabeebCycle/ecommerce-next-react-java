@@ -1,0 +1,142 @@
+.header--organic {
+    .header__extra {
+        span {
+            background-color: $color-organic;
+        }
+
+        &:hover {
+            i {
+                color: $color-organic;
+            }
+        }
+    }
+
+    .ps-block--user-header {
+        a {
+            &:hover {
+                color: $color-organic;
+            }
+        }
+    }
+
+    .menu--product-categories {
+        display: block;
+        margin-right: 20px;
+
+        .menu__toggle {
+            &:hover {
+                &:before {
+                    background-color: $color-organic;
+                }
+            }
+        }
+    }
+
+    .ps-form--quick-search {
+        width: 600px;
+
+        button {
+            background-color: $color-organic;
+            color: #ffffff;
+        }
+
+        .ps-form__categories {
+            border: 1px solid #e1e1e1;
+            border-right: none;
+        }
+
+        .form-group--icon {
+            border: 1px solid #e1e1e1;
+            min-width: 80px;
+            border-radius: 4px 0 0 4px;
+
+            select {
+                height: 40px;
+                border: none;
+            }
+        }
+
+        input {
+            border: 1px solid #e1e1e1;
+            border-left: none;
+        }
+    }
+
+    .ps-block--header-hotline {
+        p {
+            color: $color-heading;
+        }
+    }
+
+    .header__top {
+        background-color: #ffffff;
+    }
+
+    .navigation {
+        background-color: #ffffff;
+    }
+
+    .menu--organic {
+        > li {
+            > a {
+                &:hover {
+                    color: $color-organic;
+                }
+            }
+        }
+    }
+
+    &.header--sticky {
+        .menu--product-categories {
+            .menu__toggle {
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        .header__top {
+            border-bottom: 1px solid #e1e1e1;
+        }
+    }
+}
+
+.header--mobile {
+    &.organic {
+        background-color: #fff;
+
+        .ps-cart--mini {
+            text-align: left;
+        }
+
+        .ps-search--mobile {
+            background-color: $color-organic;
+        }
+
+        &.header--sticky {
+            .navigation--mobile {
+                background-color: #ffffff;
+            }
+        }
+    }
+}
+
+.navigation--list {
+    .navigation__item {
+        &.active,
+        &:focus,
+        &:active,
+        &:hover {
+            i,
+            span {
+                color: $color-organic;
+            }
+        }
+    }
+}
+
+.ps-panel--sidebar {
+    .ps-panel__header {
+        background-color: $color-organic;
+    }
+}

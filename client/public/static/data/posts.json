@@ -1,0 +1,41 @@
+{
+    "relatedPosts": [
+        {
+            "id": "3",
+            "title": "Products Necessery For Mom",
+            "thumbnail": "/static/img/blog/grid/2.jpg",
+            "type": "normal",
+            "categories": [
+                {
+                    "id": "4",
+                    "text": "Life style"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "title": "Home Interior: Modern Style 2017",
+            "thumbnail": "/static/img/blog/grid/3.jpg",
+            "type": "normal",
+            "categories": [
+                {
+                    "id": "4",
+                    "text": "Life style"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "title": "DeerCo – A New Look About Startup In Product Manufacture Field7",
+            "thumbnail": "/static/img/blog/grid/4.jpg",
+            "type": "normal",
+            "badge": "icon-picture",
+            "categories": [
+                {
+                    "id": "2",
+                    "text": "Entertaiment"
+                }
+            ]
+        }
+    ]
+}

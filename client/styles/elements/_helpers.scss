@@ -1,0 +1,86 @@
+.ma-0 {
+    margin: 0;
+}
+
+.pd-0 {
+    padding: 0;
+}
+
+@for $i from 0 through 20 {
+    .mt-#{$i * 5} {
+        margin-top: ($i * 5 + px);
+    }
+    .mr-#{$i * 5} {
+        margin-right: ($i * 5 + px);
+    }
+    .mb-#{$i * 5} {
+        margin-bottom: ($i * 5 + px);
+    }
+    .ml-#{$i * 5} {
+        margin-left: ($i * 5 + px);
+    }
+    .pt-#{$i * 5} {
+        padding-top: ($i * 5 + px);
+    }
+    .pr-#{$i * 5} {
+        padding-right: ($i * 5 + px);
+    }
+    .pb-#{$i * 5} {
+        padding-bottom: ($i * 5 + px);
+    }
+    .pl-#{$i * 5} {
+        padding-left: ($i * 5 + px);
+    }
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.ps-fullwidth {
+    width: 100%;
+}
+
+html .bg--parallax {
+    position: relative;
+    z-index: 10;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: 50% 50%;
+}
+
+.bg--cover {
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+}
+
+.bg--top {
+    background-position: 50% 50% !important;
+    background-size: cover !important;
+}
+
+%list-reset {
+    ul,
+    ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+}

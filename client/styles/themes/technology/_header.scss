@@ -1,0 +1,144 @@
+.header--technology {
+    .menu--technology {
+        > li {
+            > a {
+                color: #ffffff;
+                font-size: 16px;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding: 19px 25px;
+
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .header__extra {
+        span {
+            background-color: $color-technology;
+
+            i {
+                color: #ffffff;
+            }
+        }
+
+        &:hover {
+            > i {
+                color: $color-technology;
+            }
+        }
+    }
+
+    .menu--product-categories {
+        .menu--dropdown {
+            > li {
+                &:hover {
+                    background-color: $color-technology;
+
+                    a {
+                        color: #ffffff;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .navigation {
+        background-color: $color-technology;
+    }
+
+    .ps-form--quick-search {
+        width: 600px;
+
+        button {
+            background-color: $color-technology;
+            color: #ffffff;
+        }
+
+        .form-group--icon {
+            border: 1px solid #e1e1e1;
+            min-width: 80px;
+            border-radius: 4px 0 0 4px;
+
+            select {
+                height: 40px;
+                border: none;
+            }
+        }
+
+        .ps-form__categories {
+            border: 1px solid #e1e1e1;
+            border-right: none;
+        }
+
+        input {
+            border: 1px solid #e1e1e1;
+            border-left: none;
+        }
+    }
+
+    .ps-block--user-header {
+        .ps-block__right {
+            a {
+                &:hover {
+                    color: $color-technology;
+                }
+            }
+        }
+    }
+
+    .header__top-links {
+        .ps-block--user-header {
+            .ps-block__right {
+                a {
+                    &:hover {
+                        color: $color-technology;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header--mobile {
+    &.technology {
+        background-color: #fff;
+
+        .ps-cart--mini {
+            text-align: left;
+        }
+
+        .ps-search--mobile {
+            background-color: $color-technology;
+        }
+
+        &.header--sticky {
+            .navigation--mobile {
+                background-color: #ffffff;
+            }
+        }
+    }
+}
+
+.navigation--list {
+    .navigation__item {
+        &.active,
+        &:focus,
+        &:active,
+        &:hover {
+            i,
+            span {
+                color: $color-technology;
+            }
+        }
+    }
+}
+
+.ps-panel--sidebar {
+    .ps-panel__header {
+        background-color: $color-technology;
+    }
+}

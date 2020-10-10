@@ -1,0 +1,53 @@
+.header--market-place-1 {
+    .header__extra {
+        span {
+            i {
+                color: $color-heading;
+                font-weight: 700;
+            }
+        }
+        &:hover {
+            > i {
+                color: $color-1st;
+            }
+
+            span {
+                color: $color-1st;
+            }
+        }
+    }
+    .ps-form--quick-search {
+        .ps-form__categories {
+            border: 1px solid #e1e1e1;
+            border-right: none;
+        }
+    }
+    .header__content {
+        .menu--product-categories {
+            display: none;
+        }
+    }
+
+    .navigation {
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+        background-color: #fff;
+
+        > .container {
+            display: flex;
+            flex-flow: row nowrap;
+
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &.header--sticky {
+        .header__content {
+            .menu--product-categories {
+                display: block;
+            }
+        }
+    }
+}

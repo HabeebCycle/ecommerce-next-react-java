@@ -1,0 +1,288 @@
+* {
+    font-family: $font-1st;
+    font-weight: 400;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: $document-font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    color: $color-heading;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+
+    a {
+        color: inherit;
+    }
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+p {
+    font-size: 1.4rem;
+    line-height: 1.6em;
+    color: $color-text;
+
+    span {
+        font-family: inherit;
+        color: inherit;
+        font-size: inherit;
+    }
+}
+
+a {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    @include transition(all 0.4s ease);
+
+    &:hover {
+        color: $color-1st;
+    }
+}
+
+.site-content {
+    a {
+        color: inherit;
+    }
+}
+
+a,
+input,
+textarea,
+button,
+select {
+    outline: none;
+}
+
+a:hover,
+h1:focus,
+h2:focus,
+h3:focus,
+h4:focus,
+h5:focus,
+h6:focus {
+    text-decoration: none;
+}
+
+a:focus,
+button:focus,
+select:focus,
+input:focus,
+textarea:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+figure {
+    margin: 0;
+}
+
+.ps-document {
+    ul,
+    ol {
+        margin-bottom: 10px;
+
+        ul,
+        ol {
+            margin-bottom: 0;
+        }
+    }
+
+    ul li,
+    ol li {
+        color: $color-text;
+        font-size: $document-font-size;
+        line-height: 1.6em;
+    }
+    h5 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    p {
+        margin-bottom: 4rem;
+        line-height: 1.8em;
+        color: $color-text;
+
+        i {
+            font-family: $font-2nd;
+        }
+
+        strong {
+            font-weight: 600;
+            color: $color-text;
+
+            i {
+                font-weight: 400;
+                color: $color-heading;
+            }
+        }
+    }
+
+    blockquote {
+        position: relative;
+        margin-bottom: 3rem;
+        padding: 3rem 2rem;
+        padding-left: 6rem;
+        background-color: #f1f1f1;
+        &:before {
+            content: '“';
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            font-family: $font-2nd;
+            font-size: 5rem;
+            color: $color-text;
+        }
+
+        p {
+            margin-bottom: 0;
+            font-family: $font-2nd;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.8em;
+            color: $color-text;
+            font-style: italic;
+        }
+    }
+
+    .ps-document__heading {
+        position: relative;
+        display: block;
+        margin-bottom: 30px;
+        text-align: center;
+
+        h4 {
+            display: inline-block;
+            padding: 0 3rem;
+            margin-bottom: 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: $color-heading;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background-color: #ffffff;
+        }
+
+        &:before {
+            content: '';
+            @include vertical-align();
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ebebeb;
+            z-index: -1;
+        }
+    }
+}
+
+.ps-success {
+    color: #529115;
+    font-weight: 500;
+}
+
+.ps-heading {
+    margin-bottom: 1.5rem;
+    font-size: 3.6rem;
+    color: $color-heading;
+    font-weight: 600;
+    line-height: 1.4em;
+    &--2 {
+        font-size: 2.4rem;
+    }
+    @include media('<sm') {
+        font-size: 2.4rem;
+    }
+}
+
+.ps-blockquote {
+    border-left: 4px solid $color-1st;
+    padding-left: 60px;
+    p {
+        font-family: $font-2nd;
+        font-size: 26px;
+        font-weight: 400;
+        color: $color-heading;
+    }
+    span {
+        font-weight: 600;
+        color: $color-heading;
+    }
+}
+
+.ps-tag {
+    font-weight: 600;
+    &--in-stock {
+        color: $color-success;
+    }
+    &--out-stock {
+        color: $color-heading;
+    }
+}
+
+.ps-rating {
+    display: inline-block;
+    i {
+        margin-right: 0.5em;
+        &.fa-star {
+            color: $color-1st;
+        }
+        &.fa-star-o {
+            color: #999;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.layout--default {
+       a {
+           color: inherit;
+       }
+}

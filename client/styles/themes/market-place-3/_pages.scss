@@ -1,0 +1,128 @@
+#homepage-5 {
+    padding: 70px 0;
+    background-color: #eeeeee;
+
+    .ps-home-banner {
+        .container {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            > * {
+                width: 100%;
+            }
+        }
+
+        .ps-section__left {
+            position: relative;
+            max-width: 270px;
+            background-color: #ffffff;
+
+            .menu--dropdown {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                > li {
+                    > a {
+                        line-height: 16px;
+                    }
+                }
+            }
+
+            .mega-menu {
+                z-index: 100;
+                min-height: 100%;
+            }
+        }
+
+        .ps-section__center {
+            max-width: calc(100% - 652px);
+            img {
+                width: 100%;
+            }
+
+        }
+
+        .ps-section__right {
+            max-width: 382px;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            > a {
+                display: block;
+                max-width: 50%;
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+                &.wide {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        @include media('<lg') {
+            .ps-section__left {
+                display: none;
+            }
+        }
+
+        @include media('<md') {
+            .container {
+                flex-flow: column wrap;
+                .ps-section__center {
+                    max-width: 100%;
+                }
+                .ps-section__right {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .ps-deal-of-day {
+        margin-bottom: 30px;
+
+        .ps-product {
+            .ps-product__price {
+                color: #690;
+                font-size: 18px;
+
+                del {
+                    margin-left: 10px;
+                    font-size: 14px;
+                }
+
+                small {
+                    margin-left: 10px;
+                    color: red;
+                }
+            }
+        }
+
+        .ps-section__header,
+        .ps-section__content {
+            background-color: #fff;
+        }
+
+        .ps-section__header {
+            margin-bottom: 0;
+            padding: 20px 20px 10px;
+        }
+
+        .ps-section__content {
+            padding: 60px 30px 30px;
+        }
+    }
+
+    .ps-home-promotions {
+        margin: 0 0 30px;
+    }
+
+    .ps-block--product-box {
+        margin-bottom: 30px;
+    }
+}

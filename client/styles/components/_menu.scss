@@ -1,0 +1,577 @@
+.sub-toggle {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  @include transform-style(preserve-3d);
+  display: none;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 1px;
+    background-color: $color-heading;
+  }
+
+  &:before {
+    @include transform(translateX(-50%));
+  }
+
+  &:after {
+    @include transform(translateX(-50%) rotate(90deg));
+  }
+
+  &.active {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  z-index: 1000;
+  @include transition(all 0.25s ease);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  @include hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    @include transform(translateX(-50%));
+    @include triangle(12px, #fff, up);
+    display: none;
+  }
+
+  > li {
+    display: block;
+
+    > a {
+      display: inline-block;
+      padding: 6px 20px;
+      width: 100%;
+      font-size: 14px;
+      color: $color-heading;
+      text-transform: capitalize;
+      @include transition(all 0.8s $ease-out-expo);
+
+      &:hover {
+        color: $color-1st;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+
+      a {
+        border-bottom: 1px solid #eee;
+      }
+    }
+
+    &.menu-item-has-children {
+      position: relative;
+
+      > .sub-toggle {
+        display: none;
+      }
+
+      > .sub-menu {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        @include hidden;
+        @include transform(translateY(30px));
+
+        &:before {
+          display: none;
+        }
+      }
+
+      &:hover {
+        > .sub-menu {
+          @include show;
+          @include transform(translateY(0));
+        }
+      }
+    }
+  }
+}
+
+.mega-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 15px 30px 10px;
+  background-color: #fff;
+  @include transition(all 0.4s ease);
+  border: 1px solid #ccc;
+
+  > * {
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  h4 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-heading;
+  }
+
+  .mega-menu__column {
+    min-width: 180px;
+  }
+
+  .mega-menu__list {
+    background-color: transparent;
+
+    li {
+      a {
+        display: block;
+        color: $color-heading;
+        line-height: 20px;
+        padding: 5px 0;
+        font-size: 14px;
+        background-color: transparent;
+
+        &.has-badge {
+          padding-right: 20px;
+
+          &:after {
+            content: "New";
+            display: inline-block;
+            position: absolute;
+            top: 5px;
+            right: 0;
+            font-size: 9px;
+            color: #ffffff;
+            padding: 0px 8px;
+            line-height: 2em;
+            @include border-radius(10px);
+            background-color: $color-1st;
+          }
+
+          &.sale {
+            color: $color-danger;
+
+            &:after {
+              content: "Sale";
+              background-color: #ffa800;
+            }
+          }
+        }
+
+        &:hover {
+          color: $color-1st;
+        }
+      }
+      &:hover {
+        a {
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  text-align: left;
+
+  > li {
+    display: inline-block;
+
+    > a {
+      display: inline-block;
+      padding: 15px 25px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      color: $color-heading;
+
+      &:hover {
+        color: $color-heading;
+      }
+    }
+
+    &:first-child {
+      padding-left: 0;
+
+      > a {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .sub-toggle {
+      margin-left: 5px;
+      display: none;
+    }
+
+    .sub-menu {
+      @include hidden();
+      @include transform(scale3d(1, 1, 0) translateY(10px));
+    }
+
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      @include hidden;
+    }
+
+    &.menu-item-has-children {
+      position: relative;
+
+      > a {
+        &:after {
+          content: "\e93a";
+          font: normal normal normal 12px/1 linearicons;
+          @include vertical-align();
+          right: 0;
+        }
+
+        &:before {
+          content: "";
+          width: 13px;
+          height: 13px;
+          background-color: #fff;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          z-index: 10000;
+          border-left: 1px solid #ccc;
+          border-top: 1px solid #ccc;
+          @include transform(rotate(45deg) translate(-50%, -50%));
+          @include transform-origin(0 0);
+          @include hidden;
+        }
+      }
+
+      &:hover {
+        > .sub-menu {
+          @include transform(scale3d(1, 1, 1) translateY(0));
+        }
+      }
+    }
+
+    &.has-mega-menu {
+      position: relative;
+
+      .mega-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+
+      &:hover {
+        .mega-menu {
+          @include show;
+          @include transform(translateY(0));
+        }
+      }
+    }
+
+    &:hover {
+      .sub-toggle {
+        color: #ffffff;
+      }
+
+      > .sub-menu {
+        @include show;
+      }
+
+      &.menu-item-has-children {
+        > a {
+          &:before {
+            @include show;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu--product-categories {
+  position: relative;
+  height: 100%;
+
+  .menu__toggle {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    cursor: pointer;
+
+    i {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    span {
+      font-size: 20px;
+      color: $color-heading;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $color-heading;
+      transition: transform 0.75s $timing-1;
+      @include transform(scale3d(0, 1, 1));
+      @include transform-origin(100% 50%);
+    }
+
+    &:hover,
+    &.active {
+      &:before {
+        @include transform-origin(0 50%);
+        @include transform(scale3d(1, 1, 1));
+      }
+    }
+  }
+
+  .menu__content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    z-index: 1000;
+    min-width: 100%;
+    padding-top: 2px;
+    @include hidden;
+    transition: all 0.3s ease;
+    @include transform(scale3d(1, 1, 0) translateY(30px));
+  }
+
+  .menu--dropdown {
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    min-width: 260px;
+  }
+
+  &:hover {
+    .menu__content {
+      @include show;
+      @include transform(scale3d(1, 1, 1) translateY(0));
+    }
+  }
+}
+
+.menu--dropdown {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  > li {
+    padding: 0 20px;
+    transition: all 0.4s ease;
+
+    > a {
+      display: block;
+      padding: 10px 0;
+      color: $color-heading;
+      /*text-transform: uppercase;*/
+
+      i {
+        margin-right: 10px;
+        font-size: 18px;
+      }
+    }
+
+    &.has-mega-menu {
+      .mega-menu {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: auto;
+        min-width: 530px;
+        @include hidden;
+        border-left: none;
+      }
+
+      a.main__menu_item:after {
+        content: "\e93c";
+        display: inline-block;
+        font: normal normal normal 14px/1 linearicons;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        color: #888;
+        font-size: 11px;
+        font-weight: 600;
+      }
+    }
+
+    &:hover {
+      background-color: $color-1st;
+      color: $color-white;
+
+      &.has-mega-menu {
+        .mega-menu {
+          @include show;
+        }
+      }
+    }
+  }
+}
+
+.menu--mobile {
+  .sub-menu {
+    position: relative;
+    display: none;
+    @include transform(translate(0, 0));
+    @include show;
+    @include transition(all 0s ease);
+    border: none;
+
+    > li {
+      > a {
+        border: none;
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  .mega-menu {
+    display: none;
+    @include flex-flow(row wrap);
+    max-width: 100%;
+    padding-left: 15px;
+    @include transition(all 0s ease);
+
+    h4 {
+      position: relative;
+      display: block;
+      margin-bottom: 0;
+      padding: 10px 0;
+      width: 100%;
+      line-height: 20px;
+    }
+
+    .mega-menu__column {
+      padding: 0;
+    }
+
+    .mega-menu__list {
+      display: none;
+      padding-left: 15px;
+
+      li {
+        a {
+          color: $color-text;
+          border: none;
+
+          &:hover {
+            color: $color-heading;
+          }
+        }
+      }
+    }
+  }
+
+  > li {
+    border-bottom: 1px solid #dedede;
+
+    > a {
+      position: relative;
+      z-index: 10;
+      display: block;
+      padding: 15px 20px;
+      line-height: 20px;
+      font-size: 15px;
+
+      &:hover {
+        padding-left: 5px;
+        color: $color-heading;
+      }
+    }
+
+    &.menu-item-has-children {
+      position: relative;
+
+      .sub-toggle {
+        position: absolute;
+        top: 5px;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        z-index: 20;
+        display: inline-block;
+      }
+    }
+  }
+
+  .mega-menu {
+    border: none;
+
+    h4 {
+      font-weight: 500;
+    }
+  }
+
+  .mega-menu__list {
+    > li {
+      border-bottom: 1px solid #dedede;
+
+      a {
+        padding: 10px 0;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
+
+.menu--mobile-2 {
+  .ant-menu-submenu {
+    > .ant-menu-submenu-title {
+      > a {
+        color: $color-heading;
+        font-size: 16px;
+      }
+
+      > span {
+        font-size: 16px;
+        color: $color-heading;
+      }
+    }
+
+    > .ant-menu-sub {
+      padding-left: 20px;
+    }
+  }
+
+  .ant-menu-item-active {
+    color: $color-1st;
+    background-color: transparent;
+  }
+}

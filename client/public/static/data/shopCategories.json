@@ -1,0 +1,478 @@
+{
+    "categories": [
+        {
+            "id": "1",
+            "thumbnail": "/static/img/categories/shop/1.jpg",
+            "title": "Clothing & Apparel",
+            "links": ["Accessories", "Bags", "Kid's Fashion", "Mens"]
+        },
+        {
+            "id": "2",
+            "thumbnail": "/static/img/categories/shop/2.jpg",
+            "title": "Garden & Kitchen",
+            "links": ["Cookware", "Decoration", "Furniture", "Garden Tools"]
+        },
+        {
+            "id": "3",
+            "thumbnail": "/static/img/categories/shop/3.jpg",
+            "title": "Consumer Electrics",
+            "links": [
+                "Air Conditioners",
+                "Audios & Theaters",
+                "Car Electronics",
+                "Office Electronics"
+            ]
+        },
+        {
+            "id": "4",
+            "thumbnail": "/static/img/categories/shop/4.jpg",
+            "title": "Health & Beauty",
+            "links": ["Equipments", "Hair Care", "Perfumer", "Skin Care"]
+        },
+        {
+            "id": "5",
+            "thumbnail": "/static/img/categories/shop/5.jpg",
+            "title": "Computers & Technologies",
+            "links": ["Desktop PC", "Laptop", "Smartphones", "Accessories"]
+        },
+        {
+            "id": "6",
+            "thumbnail": "/static/img/categories/shop/6.jpg",
+            "title": "Jewelry & Watches",
+            "links": ["Gemstones Jewelry", "Men's Watches", "Women's Watches"]
+        },
+        {
+            "id": "7",
+            "thumbnail": "/static/img/categories/shop/7.jpg",
+            "title": "Phone & Accessories",
+            "links": ["Iphone 8", "Iphone X", "Samsung Note 8", "Samsung S8"]
+        },
+        {
+            "id": "8",
+            "thumbnail": "/static/img/categories/shop/8.jpg",
+            "title": "Sport & Outdoor",
+            "links": ["Freezer Burn", "Frigde Cooler", "Wine Cabinets"]
+        }
+    ],
+    "shop_categories_catalog": [
+        {
+            "text": "Clothing & Apparel",
+            "url": "/shop",
+            "extraClass": "menu-item-has-children",
+            "subClass": "sub-menu",
+            "subMenu": [
+                {
+                    "text": "Womens",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Mens",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Bags",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Sunglasses",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Accessories",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Kid's Fashion",
+                    "url": "/shop"
+                }
+            ]
+        },
+        {
+            "text": "Garden & Kitchen",
+            "url": "/shop",
+            "extraClass": "menu-item-has-children",
+            "subClass": "sub-menu",
+            "subMenu": [
+                {
+                    "text": "Cookware",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Decoration",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Furniture",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Garden Tools",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Home Improvement",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Powers And Hand Tools",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Utensil & Gadget",
+                    "url": "/shop"
+                }
+            ]
+        },
+        {
+            "text": "Consumer Electrics",
+            "url": "/shop",
+            "extraClass": "menu-item-has-children",
+            "subClass": "sub-menu",
+            "subMenu": [
+                {
+                    "text": "Air Conditioners",
+                    "url": "/shop",
+                    "extraClass": "menu-item-has-children",
+                    "subClass": "sub-menu",
+                    "subMenu": [
+                        {
+                            "text": "Accessories",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Type Hanging Cell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Type Hanging Wall",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "text": "Audios & Theaters",
+                    "url": "/shop",
+                    "extraClass": "menu-item-has-children",
+                    "subClass": "sub-menu",
+                    "subMenu": [
+                        {
+                            "text": "Headphone",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Home Theater System",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Speakers",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "text": "Car Electronics",
+                    "url": "/shop",
+                    "extraClass": "menu-item-has-children",
+                    "subClass": "sub-menu",
+                    "subMenu": [
+                        {
+                            "text": "Audio & Video",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Car Security",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Radar Detector",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Vehicle GPS",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "text": "Office Electronics",
+                    "url": "/shop",
+                    "extraClass": "menu-item-has-children",
+                    "subClass": "sub-menu",
+                    "subMenu": [
+                        {
+                            "text": "Printers",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Projectors",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Scanners",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Store & Business",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "text": "TV Televisions",
+                    "url": "/shop",
+                    "extraClass": "menu-item-has-children",
+                    "subClass": "sub-menu",
+                    "subMenu": [
+                        {
+                            "text": "4K Ultra HD TVs",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "LED TVs",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "OLED TVs",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "text": "Washing Machines",
+                    "url": "/shop",
+                    "extraClass": "menu-item-has-children",
+                    "subClass": "sub-menu",
+                    "subMenu": [
+                        {
+                            "text": "Type Drying Clothes",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Type Horizontal",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Type Vertical",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "text": "Refrigerators",
+                    "url": "/shop"
+                }
+            ]
+        },
+        {
+            "text": "Computers & Technologies",
+            "url": "/shop",
+            "extraClass": "menu-item-has-children",
+            "subClass": "sub-menu",
+            "subMenu": [
+                {
+                    "text": "Desktop PC",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Laptop",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Smartphones",
+                    "url": "/shop"
+                }
+            ]
+        },
+        {
+            "text": "Jewelry & Watches",
+            "url": "/shop",
+            "extraClass": "menu-item-has-children",
+            "subClass": "sub-menu",
+            "subMenu": [
+                {
+                    "text": "Gemstone Jewelry",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Men's Watches",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Women's Watches",
+                    "url": "/shop"
+                }
+            ]
+        },
+        {
+            "text": "Phones & Accessories",
+            "url": "/shop",
+            "extraClass": "menu-item-has-children",
+            "subClass": "sub-menu",
+            "subMenu": [
+                {
+                    "text": "Iphone 8",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Iphone X",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Sam Sung Note 8",
+                    "url": "/shop"
+                },
+                {
+                    "text": "Sam Sung S8",
+                    "url": "/shop"
+                }
+            ]
+        }
+    ],
+    "electronicCollection": [
+        {
+            "type": "large",
+            "imagePath": "/static/img/categories/electronic/large.jpg",
+            "text": ""
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/electronic/1.jpg",
+            "text": "Audios & Theaters ",
+            "item": 2
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/electronic/2.jpg",
+            "text": "TV Televisions",
+            "item": 2
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/electronic/3.jpg",
+            "text": "Washing Machines",
+            "item": 4
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/electronic/4.jpg",
+            "text": "Air Conditioners",
+            "item": 5
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/electronic/5.jpg",
+            "text": "Refrigerators",
+            "item": 10
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/electronic/6.jpg",
+            "text": "Office Electronics",
+            "item": 2
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/electronic/7.jpg",
+            "text": "Car Electronics",
+            "item": 3
+        }
+    ],
+    "clothingCollection": [
+        {
+            "type": "large",
+            "imagePath": "/static/img/categories/clothing/large.jpg",
+            "text": ""
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/clothing/1.jpg",
+            "text": "Womens",
+            "item": 2
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/clothing/2.jpg",
+            "text": "Mens",
+            "item": 2
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/clothing/3.jpg",
+            "text": "Shoes",
+            "item": 4
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/clothing/4.jpg",
+            "text": "Bags",
+            "item": 5
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/clothing/5.jpg",
+            "text": "Sunglasses",
+            "item": 10
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/clothing/6.jpg",
+            "text": "Accessories",
+            "item": 2
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/clothing/7.jpg",
+            "text": "Kid's Fashion",
+            "item": 3
+        }
+    ],
+    "kitchenCollection": [
+        {
+            "type": "large",
+            "imagePath": "/static/img/categories/kitchen/large.jpg",
+            "text": ""
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/kitchen/1.jpg",
+            "text": "Furniture",
+            "item": 2
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/kitchen/2.jpg",
+            "text": "Decoration",
+            "item": 2
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/kitchen/3.jpg",
+            "text": "Utensil & Gadget",
+            "item": 4
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/kitchen/4.jpg",
+            "text": "Cookware",
+            "item": 5
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/kitchen/5.jpg",
+            "text": "Powers And Hand Tools",
+            "item": 10
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/kitchen/6.jpg",
+            "text": "Garden Tools",
+            "item": 2
+        },
+        {
+            "type": "item",
+            "imagePath": "/static/img/categories/kitchen/7.jpg",
+            "text": "Home Improvement",
+            "item": 3
+        }
+    ]
+}

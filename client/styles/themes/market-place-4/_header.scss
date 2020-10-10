@@ -1,0 +1,113 @@
+.header--market-place-4 {
+    .ps-dropdown {
+        a {
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+
+    .header__extra {
+        span {
+            background-color: $color-heading;
+            i {
+                color: #ffffff;
+            }
+        }
+    }
+
+    .ps-block--user-header {
+        a {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    .header__top {
+        background-color: #dba500;
+
+        .header__left {
+            p {
+                color: $color-heading;
+            }
+        }
+
+        .header__top-links {
+            li {
+                &:after {
+                    border-color: #a37000;
+                }
+
+                > a {
+                    color: $color-heading;
+                }
+            }
+        }
+    }
+
+    .header__content {
+        background-color: $color-1st;
+
+        .container {
+            align-items: flex-start;
+        }
+
+        .menu--product-categories {
+            .menu__toggle {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .header__center-left {
+        padding-top: 10px;
+    }
+
+    .header__content-center {
+        .ps-form--quick-search {
+            margin-bottom: 10px;
+
+            button {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+
+            a {
+                display: inline-block;
+                margin-right: 10px;
+                color: $color-heading;
+
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    &.header--sticky {
+        .header__content {
+            .container {
+                align-items: center;
+            }
+
+            .menu--product-categories {
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        .header__content-center {
+            p {
+                display: none;
+            }
+        }
+    }
+}

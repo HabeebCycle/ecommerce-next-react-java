@@ -1,0 +1,635 @@
+.ps-form--newsletter {
+    h3 {
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 24px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .form-group--nest {
+        button {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+    }
+
+    @include media('<lg') {
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.ps-form--quick-search {
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+
+    .ps-form__categories {
+        position: relative;
+        background-color: #fff;
+        max-width: 180px;
+        vertical-align: top;
+        &:after {
+            content: '\e93a';
+            @include vertical-align();
+            right: 8px;
+            font-family: 'Linearicons';
+            font-size: 12px;
+        }
+        select.form-control {
+            padding-right: 30px;
+            height: 40px;
+            border-radius: 4px 0 0 4px;
+            @include appearance(none);
+        }
+    }
+
+    .ant-select {
+        .ant-select-selection {
+            height: 42px;
+            border-radius: 0;
+            border: none;
+            .ant-select-selection__rendered {
+                border: none;
+                line-height: 42px;
+                border-radius: 0;
+            }
+        }
+    }
+
+    .form-control {
+        background-color: #fff;
+        color: $color-heading;
+        height: 42px;
+        border: none;
+        border-radius: 0;
+    }
+
+    .form-group--icon {
+        background-color: #ffffff;
+        border-radius: 4px 0 0 4px;
+
+        i {
+            z-index: 1;
+        }
+    }
+
+    select.form-control {
+        border-right: 1px solid #ccc;
+        border-radius: 4px 0 0 4px;
+        padding: 0 10px;
+        text-indent: 10px;
+        position: relative;
+        z-index: 2;
+        background-color: transparent;
+        @include placeholder() {
+            color: rgba(102, 102, 102, 1);
+        }
+    }
+
+    button {
+        background-color: $color-heading;
+        color: #ffffff;
+        border: none;
+        font-weight: 700;
+        padding: 0 24px;
+        border-radius: 0 4px 4px 0;
+    }
+
+    .ps-panel--search-result {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        padding: 10px 20px;
+        @include transform(scale3d(1, 1, 0));
+        transition: all 0.4s ease;
+        opacity: 0;
+        visibility: hidden;
+        .ps-panel__content {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        &.active {
+            @include transform(scale3d(1, 1, 1));
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .ps-product {
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.ps-form--widget-search {
+    position: relative;
+    margin-bottom: 20px;
+
+    input {
+        height: 34px;
+        background-color: #ffffff;
+        border-radius: 0;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        @include vertical-align();
+        right: 10px;
+    }
+}
+
+.ps-form--review {
+    h4 {
+        margin-bottom: 20px;
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.2em;
+        text-transform: uppercase;
+    }
+
+    p {
+        sup {
+            margin-left: 5px;
+            color: $color-danger;
+        }
+    }
+
+    .form-group__rating {
+        display: flex;
+        align-items: center;
+
+        label {
+            margin-bottom: 0;
+            line-height: 20px;
+            margin-right: 15px;
+        }
+    }
+
+    .form-control {
+        border-radius: 0;
+    }
+
+    button {
+        border-radius: 0;
+        font-weight: 600;
+    }
+}
+
+.ps-form--post-comment {
+    h3 {
+        margin-bottom: 40px;
+        font-weight: 600;
+        font-size: 24px;
+        color: $color-heading;
+    }
+
+    .submit {
+        text-align: center;
+
+        .ps-btn {
+            padding: 0 30px;
+            height: 50px;
+        }
+    }
+}
+
+.ps-form--contact-us {
+    .form-control {
+        background-color: #ffffff;
+    }
+
+    .submit {
+        text-align: center;
+
+        button {
+            height: 50px;
+            padding: 0 30px;
+        }
+    }
+}
+
+.ps-form--account {
+    max-width: 430px;
+    margin: 0 auto !important;
+    padding-top: 130px;
+    @extend %list-reset;
+
+    .ps-tab-list {
+        text-align: center;
+        margin-bottom: 30px;
+
+        li {
+            display: inline-block;
+            padding: 0 15px;
+
+            a {
+                font-size: 30px;
+                color: $color-text;
+                font-weight: 600;
+            }
+
+            &.active {
+                a {
+                    color: $color-heading;
+                }
+            }
+        }
+    }
+
+    .form-forgot {
+        position: relative;
+
+        input {
+            padding-right: 100px;
+        }
+
+        > a {
+            @include vertical-align();
+            right: 10px;
+            color: #06c;
+
+            &:hover {
+                color: $color-1st;
+            }
+        }
+    }
+
+    .ps-checkbox {
+        > label {
+            color: $color-heading;
+        }
+    }
+
+    .ps-list--social {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin: 0 -5px;
+
+        li {
+            padding: 0 5px;
+            width: 100%;
+            text-align: center;
+            margin-right: 0;
+
+            a {
+                display: block;
+                line-height: 20px;
+                padding: 15px 0;
+
+                i {
+                    color: #ffffff;
+                    text-align: center;
+                }
+
+                &.facebook {
+                    background-color: #3b5999;
+                }
+
+                &.google {
+                    background-color: #dd4b39;
+                }
+
+                &.twitter {
+                    background-color: #55acee;
+                }
+
+                &.instagram {
+                    background-color: #e4405f;
+                }
+            }
+        }
+    }
+
+    .ps-form__content {
+        padding: 30px 30px 0;
+
+        h5 {
+            margin: 0 0 25px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    .ps-form__footer {
+        padding: 30px 30px;
+    }
+
+    .ps-tab {
+        background-color: #ffffff;
+    }
+}
+
+.ps-form--order-tracking {
+    max-width: 630px;
+    margin: 0 auto 50px;
+
+    .form-group {
+        margin-bottom: 30px;
+
+        > label {
+            font-size: 18px;
+            font-weight: 600;
+            color: $color-heading;
+        }
+
+        input {
+            border-color: #bfbfbf;
+            @include placeholder() {
+                color: #a9a9a9;
+            }
+        }
+    }
+
+    @include media('<md') {
+        .form-group {
+            > label {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.ps-form--search-mobile {
+    input {
+        height: 40px;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 0;
+    }
+
+    button {
+        min-width: 40px;
+        height: 40px;
+        background-color: #000;
+        border: none;
+
+        i {
+            color: #ffffff;
+        }
+    }
+}
+
+.ps-form--subscribe-popup {
+    padding: 60px 50px;
+
+    h4 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: 400;
+
+        strong {
+            color: $color-1st;
+        }
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    input {
+        margin-bottom: 20px;
+        height: 40px;
+        border: 2px solid #c9c9c9;
+    }
+
+    button {
+        height: 40px;
+        width: auto;
+        padding: 0 30px;
+    }
+
+    .ps-checkbox {
+        > label {
+            color: $color-heading;
+
+            &:before {
+                border-radius: 3px;
+            }
+        }
+    }
+
+    .ps-form__content {
+        max-width: 360px;
+        text-align: center;
+    }
+}
+
+.ps-form--vendor-datetimepicker {
+    margin-bottom: 24px;
+
+    .input-group {
+        border: 1px solid #d0d0d0;
+        border: none;
+        margin-bottom: 10px;
+
+        &:after {
+            content: '\e789';
+            font-family: 'Linearicons';
+            @include vertical-align();
+            right: 10px;
+            font-size: 16px;
+        }
+
+        input {
+            height: 40px;
+        }
+
+        .input-group-text {
+            padding: 0 20px;
+            font-size: 14px;
+            min-width: 60px;
+            text-align: center;
+            font-weight: 500;
+            color: $color-heading;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+    }
+
+    button {
+        background-color: #88aa00;
+        border-radius: 0;
+        height: 40px;
+        padding: 0 30px;
+
+        color: #ffffff;
+
+        i {
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        &:hover {
+            background-color: lighten(#88aa00, 5%);
+        }
+    }
+}
+
+.ps-form--photo-search {
+    .select2 {
+        position: relative;
+
+        &:before {
+            content: '';
+            @include vertical-align();
+            left: 0;
+            width: 1px;
+            height: 50px;
+            background-color: #dfdfdf;
+            z-index: 20;
+        }
+
+        .select2-selection {
+            position: relative;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            border: none;
+            min-width: 190px;
+            border-radius: 0 6px 6px 0;
+
+            .select2-selection__rendered {
+                width: 100%;
+                font-weight: 600;
+                color: $color-heading;
+            }
+        }
+    }
+
+    .form-group--icon {
+        margin-bottom: 0;
+        width: 100%;
+
+        i {
+            right: auto;
+            left: 20px;
+            font-size: 18px;
+            color: $color-heading;
+
+            &:before {
+                font-size: inherit;
+            }
+        }
+
+        input {
+            background-color: #fff;
+            border: none;
+            height: 60px;
+            text-indent: 30px;
+            padding-left: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px 0 0 6px;
+            @include placeholder() {
+                font-weight: 400;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .ps-form__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    .ps-form__footer {
+        a {
+            display: inline-block;
+            margin-right: 10px;
+
+            &:hover {
+                color: $color-photo;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        .ps-form__content {
+            align-items: flex-start;
+            flex-flow: column-reverse wrap;
+
+            .select2 {
+                margin-bottom: 20px;
+                min-width: 100%;
+
+                .select2-selection {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+.ps-form--edit-address {
+    .ps-form__header {
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #d1d1d1;
+    }
+}
+
+.ps-form--account-setting {
+    .ant-calendar-picker {
+        min-width: 100%;
+        input {
+            height: 50px;
+            border-radius: 0;
+        }
+    }
+    .form-control {
+        &.ant-input {
+            border-color: #d1d1d1;
+            background-color: #fafafa;
+            &:focus {
+                border-color: $color-1st;
+            }
+        }
+    }
+    .ps-form__header {
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eaeaea;
+        h3 {
+            margin-bottom: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+    .ps-form__content {
+        padding: 30px;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(#ccc, 0.5);
+        background-color: #fff;
+    }
+}
+
+.ps-form--checkout {
+    .ps-form__submit {
+        @media (min-width: 768px) {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

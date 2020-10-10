@@ -1,0 +1,117 @@
+#homepage-8 {
+    .ps-btn,
+    button.ps-btn {
+        background-color: $color-furniture;
+        color: #ffffff;
+
+        &:hover {
+            background-color: darken($color-furniture, 5%);
+        }
+    }
+
+    .ps-carousel {
+        .slick-arrow {
+            &:hover {
+                background-color: $color-furniture;
+                color: #fff;
+            }
+        }
+    }
+
+    .ps-block--site-features {
+        .ps-block__left {
+            i {
+                color: $color-furniture;
+            }
+        }
+    }
+
+    .ps-site-features {
+        padding: 50px 0;
+
+        @include media('<sm') {
+            padding: 30px 0;
+        }
+    }
+
+    .ps-home-promotions {
+        padding-top: 10px;
+        padding-bottom: 60px;
+
+        .ps-section__header {
+            text-align: center;
+            padding-bottom: 30px;
+
+            h3 {
+                font-weight: 400;
+
+                span {
+                    color: $color-furniture;
+                }
+            }
+        }
+
+        .ps-collection {
+            @include media('<sm') {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .ps-home-trending-products {
+        .ps-section__header {
+            text-align: center;
+
+            h3 {
+                font-weight: 400;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .ps-home-categories {
+        padding-top: 60px;
+        padding-bottom: 40px;
+
+        .ps-section__header {
+            text-align: center;
+            border-bottom: none;
+
+            h3 {
+                font-weight: 400;
+                font-size: 24px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .ps-home-shop-by-room {
+        padding-top: 60px;
+    }
+
+    .ps-home-promotion-2 {
+        padding-bottom: 60px;
+    }
+
+    .ps-best-sale-brands {
+        padding-top: 40px;
+    }
+}
+
+.ps-section--furniture {
+    .ps-section__header {
+        text-align: center;
+        padding-bottom: 30px;
+
+        h3 {
+            font-weight: 400;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.ps-footer--furniture {
+    border-top: 1px solid #e1e1e1;
+    background-color: #f8f8f8;
+}

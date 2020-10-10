@@ -1,0 +1,32 @@
+#homepage-6 {
+    .ps-site-features {
+        padding: 50px 0;
+        @include media('<sm') {
+            padding: 30px 0;
+        }
+    }
+
+    .ps-top-categories {
+        padding-bottom: 30px;
+        @media (min-width: 1680px) {
+            .row {
+                .col-xl-2 {
+                    max-width: calc(100% / 6);
+                }
+            }
+        }
+    }
+
+    .ps-deal-hot {
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
+    .ps-promotions {
+        @include media('<sm') {
+            .ps-collection {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

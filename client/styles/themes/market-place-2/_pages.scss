@@ -1,0 +1,74 @@
+#homepage-4 {
+    .ps-home-banner {
+        padding-top: 30px;
+        .container {
+            display: flex;
+            flex-flow: row nowrap;
+            > * {
+                width: 100%;
+            }
+            .ps-section__left {
+                max-width: calc(100% - 370px);
+                padding-right: 30px;
+            }
+            .ps-section__right {
+                max-width: 370px;
+            }
+        }
+        .ps-carousel {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .ps-home-categories {
+        padding-bottom: 20px;
+    }
+    .ps-deal-of-day {
+        padding: 50px 0;
+        .ps-product {
+            .ps-product__price {
+                color: #690;
+                font-size: 18px;
+                del {
+                    margin-left: 10px;
+                    font-size: 14px;
+                }
+                small {
+                    margin-left: 10px;
+                    color: red;
+                }
+            }
+        }
+        @include media('<sm') {
+            padding: 40px 0;
+        }
+    }
+
+    .ps-product-list {
+        padding-top: 70px;
+
+        .ps-section__header {
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        @include media('<sm') {
+            padding: 45px;
+        }
+        @include media('<xs') {
+            padding: 35px;
+        }
+    }
+
+    .ps-download-app {
+        @include section-standard;
+    }
+
+    .ps-block--download-app {
+        border: 1px solid #e1e1e1;
+
+        .ps-block__content {
+            padding-right: 100px;
+        }
+    }
+}

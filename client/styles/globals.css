@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap");
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #000;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +18,102 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/*
+* TopBar CSS
+*/
+
+@media (max-width: 920px) {
+  .topbar {
+    display: none;
+  }
+}
+
+.topbar {
+  padding: 17px;
+  border-bottom: solid 1px #eedd33;
+  font-weight: 400;
+  background-color: #fdfdfd;
+}
+
+.topbar-left {
+  color: #ed3237;
+}
+
+.topbar-right {
+  font-weight: 400;
+  position: absolute;
+  right: 0;
+  padding-right: 20px;
+}
+
+img.wp-smiley,
+img.emoji {
+  /*display: inline;*/
+  border: none;
+  box-shadow: none;
+  height: 1em;
+  width: 1em;
+  margin: 0 0.07em;
+  vertical-align: -0.1em;
+  background: none;
+  padding: 0;
+}
+
+.top-container {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+
+.topbar .topbar-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.topbar .topbar-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: auto;
+}
+
+.topbar .widget {
+  margin-bottom: 0;
+  line-height: 1;
+  padding: 0 20px;
+  position: relative;
+}
+
+.topbar .widget:first-child {
+  padding-left: 0;
+}
+
+.topbar .widget:last-child {
+  padding-right: 0;
+}
+
+.topbar .menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar ul.menu-list > li {
+  display: inline-block;
+  padding: 0 5px;
+  position: relative;
+}
+
+#topbar a {
+  text-decoration: none;
+}
+
+#topbar a:hover {
+  text-decoration: none;
+  color: #ed3237;
 }

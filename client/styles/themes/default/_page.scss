@@ -1,0 +1,157 @@
+#homepage-1 {
+    .ps-home-banner {
+        padding-top: 30px;
+        margin-bottom: 30px;
+
+        .ps-container {
+            display: flex;
+            flex-flow: row nowrap;
+
+            > * {
+                width: 100%;
+            }
+
+            .ps-section__left {
+                padding-right: 30px;
+                max-width: calc(100% - 390px);
+            }
+
+            .ps-section__right {
+                max-width: 390px;
+
+                .ps-collection {
+                    display: block;
+                    margin-bottom: 30px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            @include media('<lg') {
+                display: block;
+                .ps-section__left {
+                    max-width: 100%;
+                    margin-bottom: 10px;
+                    padding-right: 0;
+                }
+
+                .ps-section__right {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    margin: 0;
+                    max-width: 100%;
+                    .ps-collection {
+                        width: 100%;
+                        max-width: 50%;
+                        padding: 0 5px;
+
+                        img {
+                            width: 100%;
+                        }
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ps-site-features {
+        padding-bottom: 90px;
+        @media screen and (max-width: 480px) {
+
+        }
+    }
+
+    .ps-deal-of-day {
+        padding-bottom: 80px;
+        .slick-slide {
+            > div {
+                margin: 0 8px;
+            }
+        }
+
+        .ps-product {
+            .ps-product__price {
+                color: #690;
+                font-size: 18px;
+                font-weight: 600;
+
+                del {
+                    margin-left: 10px;
+                    font-size: 14px;
+                }
+
+                small {
+                    margin-left: 10px;
+                    color: red;
+                }
+            }
+        }
+    }
+
+    .ps-top-categories {
+        padding: 80px 0 50px;
+
+        h3 {
+            text-transform: capitalize;
+        }
+
+        @media (min-width: 1440px) {
+            .row {
+                .col-xl-2 {
+                    max-width: calc(100% / 8);
+                }
+            }
+        }
+
+        @include media('<lg') {
+            padding: 60px 0;
+        }
+
+        @include media('<md') {
+            padding: 50px 0;
+        }
+
+        @include media('<sm') {
+            padding: 40px 0;
+        }
+
+        @include media('<xs') {
+            padding: 35px 0;
+        }
+    }
+
+    .ps-product-list {
+        padding-bottom: 80px;
+        @include media('<md') {
+            padding-bottom: 50px;
+        }
+        @include media('<sm') {
+            padding-bottom: 40px;
+        }
+        @include media('<xs') {
+            padding-bottom: 0px;
+        }
+    }
+
+    .ps-download-app {
+        margin-top: 80px;
+        margin-bottom: 100px;
+        @include media('<sm') {
+            margin-bottom: 50px;
+        }
+    }
+
+    .ps-carousel {
+        .slick-list {
+            padding-right: 3px !important;
+        }
+    }
+}

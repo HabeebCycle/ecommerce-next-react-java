@@ -1,0 +1,838 @@
+{
+    "megamenu": [
+        {
+            "text": "Laptop",
+            "url": "/blog",
+            "subMenu": [
+                {
+                    "heading": "Gaming Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Office Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Business Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Dell laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Asus laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "HP laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Gaming PC",
+            "url": "/shop",
+            "subMenu": [
+                {
+                    "heading": "Gaming Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Office Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Business Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Dell laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Asus laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "HP laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Workstation",
+            "url": "/shop",
+            "subMenu": [
+                {
+                    "heading": "Gaming Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Office Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Business Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Dell laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Asus laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "HP laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "PC Components",
+            "url": "/shop",
+            "subMenu": [
+                {
+                    "heading": "Gaming Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Office Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Business Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Dell laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Asus laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "HP laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Monitor",
+            "url": "/shop",
+            "subMenu": [
+                {
+                    "heading": "Gaming Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Office Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Business Laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Acer",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Asus",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Dell laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Asus laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                },
+                {
+                    "heading": "HP laptop",
+                    "url": "/shop",
+                    "subMenu": [
+                        {
+                            "text": "Inspiron Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "G Series",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Dell",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "MSI",
+                            "url": "/shop"
+                        },
+                        {
+                            "text": "Lenovo",
+                            "url": "/shop"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Keyboard",
+            "url": "/shop"
+        },
+        {
+            "text": "Mouse & MousePad",
+            "url": "/shop"
+        },
+        {
+            "text": "Headphone",
+            "url": "/shop"
+        },
+        {
+            "text": "Audio Devices",
+            "url": "/shop"
+        },
+        {
+            "text": "Network Components",
+            "url": "/shop"
+        },
+        {
+            "text": "Accessories",
+            "url": "/shop"
+        }
+    ]
+}

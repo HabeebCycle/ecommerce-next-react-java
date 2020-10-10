@@ -1,0 +1,452 @@
+#shop-carousel {
+    .ps-carouse--nav-inside {
+        margin-bottom: 60px;
+        @include media('<sm') {
+            margin-bottom: 40px;
+        }
+    }
+
+    .ps-block--container-hightlight {
+        margin-bottom: 60px;
+    }
+
+    .ps-product-list {
+        margin-bottom: 90px;
+
+        .ps-section__header {
+            display: block;
+            text-align: center;
+        }
+
+        @include media('<sm') {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+#shop-categories {
+    background-color: #f5f5f5;
+    padding-bottom: 90px;
+
+    .ps-catalog-top {
+        padding: 70px 0;
+    }
+
+    .ps-product-list {
+        margin-bottom: 20px;
+        padding: 20px 20px 50px;
+        background-color: #ffffff;
+
+        .ps-section__header {
+            h3 {
+                font-weight: 400;
+            }
+        }
+    }
+
+    .ps-more-categories {
+        .ps-section__content {
+            display: flex;
+            flex-flow: row wrap;
+
+            .ps-block--category-vertical {
+                margin-bottom: 30px;
+                max-width: 20%;
+                padding: 30px 10px;
+                @include media('<lg') {
+                    max-width: 25%;
+                }
+                @include media('<md') {
+                    max-width: calc(100% / 3);
+                }
+                @include media('<sm') {
+                    max-width: 50%;
+                }
+                @include media('<xs') {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+#shop-sidebar {
+    .ps-page__header {
+        margin-bottom: 50px;
+
+        h1 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: $color-heading;
+            font-size: 24px;
+        }
+    }
+
+    .ps-layout--shop {
+        padding-top: 30px;
+    }
+}
+
+#contact-us {
+    .ps-breadcrumb {
+        margin-bottom: 0;
+    }
+}
+
+#contact-map {
+    height: 100vh;
+}
+
+#shop-carousel {
+    .ps-carousel--nav-inside {
+        padding: 30px 0 50px;
+
+        .owl-item {
+            img {
+                width: 100%;
+            }
+        }
+
+        @include media('<sm') {
+            padding: 30px 0;
+        }
+    }
+}
+
+.ps-page--404 {
+    position: relative;
+    min-height: 100vh;
+    background-color: #efeef0;
+    text-align: center;
+
+    .container {
+        min-height: 100vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+    }
+
+    img {
+        margin-bottom: 100px;
+    }
+
+    h3 {
+        margin-bottom: 20px;
+        font-size: 36px;
+        color: $color-heading;
+        font-weight: 600;
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 18px;
+
+        a {
+            color: $color-1st;
+        }
+    }
+
+    .ps-form--widget-search {
+        max-width: 370px;
+        margin: 0 auto;
+
+        input {
+            height: 50px;
+            border-color: #fff;
+        }
+    }
+
+    @include media('<sm') {
+        h3 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+.ps-page--comming-soon {
+    text-align: center;
+    padding-bottom: 50px;
+    @extend %list-reset;
+
+    .ps-countdown {
+        li {
+            display: inline-block;
+            margin-right: 20px;
+
+            span {
+                margin-bottom: 0;
+                font-weight: 400;
+                font-size: 48px;
+                color: $color-heading;
+                line-height: 1em;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .ps-page__header {
+        padding: 50px 0;
+
+        .ps-logo {
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 600;
+        }
+    }
+
+    figure {
+        figcaption {
+            margin-bottom: 30px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .ps-countdown {
+            margin-bottom: 80px;
+        }
+    }
+
+    .ps-list--social {
+        li {
+            margin-right: 30px;
+
+            a {
+                color: #cccccc;
+
+                &:hover {
+                    color: $color-1st;
+                }
+            }
+        }
+    }
+}
+
+.ps-page--shop {
+    .ps-shop-banner {
+        padding: 30px 0 45px;
+    }
+
+    .ps-shop-brand {
+        margin-bottom: 45px;
+    }
+
+    .ps-shop-categories {
+        margin-bottom: 30px;
+    }
+
+    .ps-carousel--nav-inside {
+        .owl-item {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .ps-product:not(.ps-product--wide) {
+            border-color: #dfdfdf;
+
+            .ps-product__content:not(.hover) {
+                position: relative;
+                display: block;
+                left: 0;
+                //width: calc(100% + 40px);
+                padding: 0 10px 20px;
+                border-bottom: 1px solid #dfdfdf;
+                border-top: none;
+            }
+        }
+
+        .ps-shop-banner,
+        .ps-shop-brand,
+        .ps-shop-categories,
+        .ps-shop-categories,
+        .ps-block--shop-features,
+        .ps-block--shop-features {
+            display: none;
+        }
+    }
+    @include media('<sm') {
+        .ps-product {
+            .ps-product__vendor {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .ps-product__content:not(.hover) {
+                width: 100%;
+                left: 0;
+                padding: 0 10px 20px;
+            }
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 992px) {
+        .container {
+            max-width: 100%;
+        }
+    }
+}
+
+.ps-page--product {
+    padding-top: 30px;
+
+    .ps-page__container {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+
+        > * {
+            width: 100%;
+        }
+
+        .ps-page__left {
+            padding-right: 30px;
+            max-width: calc(100% - 290px);
+        }
+
+        .ps-page__right {
+            min-width: 290px;
+            max-width: 290px;
+        }
+    }
+
+    .ps-page__right {
+        .widget_same-brand {
+            border-bottom: 1px solid #eaeaea;
+        }
+    }
+
+    &.reverse {
+        .ps-page__container {
+            flex-flow: row-reverse nowrap;
+        }
+
+        .ps-page__right {
+            padding-right: 30px;
+        }
+    }
+
+    @include media('<lg') {
+        .ps-page__right {
+            display: none;
+        }
+        .ps-page__container {
+            flex-flow: column wrap;
+
+            .ps-page__left {
+                max-width: 100%;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.ps-page--product-box {
+    padding-bottom: 30px;
+    background-color: #f1f1f1;
+}
+
+.ps-page--blog {
+    .ps-page__header {
+        padding: 90px 0;
+        text-align: center;
+
+        h1 {
+            margin: 0 0 20px;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1em;
+        }
+    }
+
+    @include media('<md') {
+        .ps-page__header {
+            padding: 45px 0;
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+    }
+    @include media('<sm') {
+        .ps-page__header {
+            padding: 30px 0;
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    }
+    @include media('<xs') {
+        .ps-page__header {
+            padding: 25px 0;
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.ps-page--account {
+    padding-top: 50px;
+
+    .ps-page__left {
+        height: 100%;
+        padding: 30px 20px;
+        border-radius: 4px;
+        background-color: #fff;
+    }
+
+    .ps-page__dashboard {
+        p {
+            font-size: 16px;
+
+            a {
+                color: $color-linkedin;
+
+                &:hover {
+                    color: $color-1st;
+                }
+            }
+        }
+    }
+}
+
+.ps-site-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 100vh;
+    background-color: rgba(#000, 0.75);
+    @include transition(all 0.4s ease);
+    @include hidden;
+
+    &.active {
+        @include show;
+    }
+}
+
+.layout--product {
+    .navigation--list{
+        @include hidden;
+    }
+}

@@ -1,0 +1,165 @@
+#homepage-10 {
+    a {
+        &:hover {
+            color: $color-technology;
+        }
+    }
+    .ps-btn,
+    button.ps-btn {
+        background-color: $color-technology;
+        color: #ffffff;
+        &:hover {
+            background-color: darken($color-technology, 5%);
+            color: #ffffff;
+        }
+    }
+
+    .ps-btn {
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .ps-product {
+        .ps-product__title {
+            &:hover {
+                color: $color-technology;
+            }
+        }
+    }
+
+    .ps-carousel {
+        .slick-arrow {
+            &:hover {
+                background-color: $color-technology;
+                color: #fff;
+            }
+        }
+    }
+
+    .ps-deal-of-day {
+    }
+
+    .ps-product--hot-deal {
+        .ps-product__thumbnail {
+            .ps-product__variants {
+                .item.slick-current {
+                    border-color: $color-technology;
+                }
+            }
+        }
+
+        .ps-countdown {
+            li {
+                span {
+                    color: $color-technology;
+                }
+            }
+        }
+
+        .product__processs-bar {
+            .ps-progress span {
+                background-color: $color-technology;
+            }
+        }
+    }
+
+    .ps-block--deal-hot {
+        border-color: $color-technology;
+    }
+
+    .ps-block--testimonial {
+        .ps-block__content {
+            i {
+                color: $color-technology;
+            }
+        }
+    }
+
+    .ps-site-features {
+        padding: 50px 0;
+
+        .ps-block--site-features {
+            i {
+                color: $color-technology;
+            }
+        }
+    }
+
+    .ps-top-categories {
+        padding-bottom: 60px;
+
+        .ps-block--category {
+            &:hover {
+                border-color: $color-technology;
+            }
+        }
+    }
+
+    .ps-product-list {
+        margin-bottom: 30px;
+    }
+
+    .ps-deal-of-day {
+        margin-bottom: 60px;
+        padding-top: 50px;
+
+        .ps-product {
+            .ps-product__price {
+                color: #690;
+                font-size: 18px;
+
+                del {
+                    margin-left: 10px;
+                    font-size: 14px;
+                }
+
+                small {
+                    margin-left: 10px;
+                    color: red;
+                }
+            }
+        }
+    }
+
+    .ps-home-recent-view {
+        padding: 70px 0;
+        background-color: #f4f5f5;
+    }
+
+    .ps-home-promotions {
+        margin-bottom: 30px;
+    }
+
+    .ps-footer {
+        border-top: 1px solid #e1e1e1;
+        background-color: #f8f8f8;
+
+        .ps-form--newletter {
+            .form-group--nest {
+                button {
+                    background-color: $color-technology;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1680px) {
+        .ps-product-list {
+            .row {
+                .col-xl-3 {
+                    max-width: calc(100% / 5);
+                }
+            }
+        }
+        .ps-top-categories {
+            .row {
+                .col-xl-2 {
+                    max-width: calc(100% / 6);
+                }
+            }
+        }
+    }
+}
