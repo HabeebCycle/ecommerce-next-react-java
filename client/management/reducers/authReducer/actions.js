@@ -9,3 +9,8 @@ export const setUserVendor = (isVendor) => ({
   type: t.SET_USER_VENDOR,
   payload: isVendor,
 });
+
+export const setUserToken = (token) => ({
+  type: t.SET_USER_TOKEN,
+  payload: token,
+});

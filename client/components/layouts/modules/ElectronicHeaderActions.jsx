@@ -1,11 +1,11 @@
 import Link from "next/link";
-import store from "../../../management/store";
 
 import MiniCart from "./MiniCart";
 import AccountQuickLinks from "./AccountQuickLinks";
+import { connect } from "react-redux";
 
-const ElectronicHeaderActions = () => {
-  const { compare, wishlist, auth } = store.getState();
+const ElectronicHeaderActions = (props) => {
+  const { compare, wishlist, auth } = props;
   return (
     <div className="header__actions">
       <Link href="/account/compare">
@@ -25,13 +25,15 @@ const ElectronicHeaderActions = () => {
         </a>
       </Link>
       <MiniCart />
-      {auth.isLoggedIn && Boolean(auth.isLoggedIn) === true ? (
-        <AccountQuickLinks isLoggedIn={true} />
-      ) : (
-        <AccountQuickLinks isLoggedIn={false} />
-      )}
+      <AccountQuickLinks isLoggedIn={auth.isLoggedIn} />
     </div>
   );
 };
 
-export default ElectronicHeaderActions;
+const state = (appState) => ({
+  auth: appState.auth,
+  compare: appState.compare,
+  wishlist: appState.wishlist,
+});
+
+export default connect(state)(ElectronicHeaderActions);

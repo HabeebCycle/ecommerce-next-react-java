@@ -51,7 +51,7 @@ const SearchHeader = () => {
       onSubmit={handleSubmit}
     >
       <div className="ps-form__categories">
-        <select className="form-control">
+        <select className="form-control search-panel">
           {exampleCategories.map((option) => (
             <option value={option} key={option}>
               {option}

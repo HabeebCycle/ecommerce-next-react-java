@@ -1,8 +1,8 @@
 import Link from "next/link";
-import store from "../../../management/store";
+import { connect } from "react-redux";
 
-const TopBar = () => {
-  const { auth } = store.getState();
+const TopBar = (props) => {
+  const { auth } = props;
 
   return (
     <div id="topbar" className="topbar">
@@ -75,4 +75,8 @@ const TopBar = () => {
   );
 };
 
-export default TopBar;
+const state = (appState) => ({
+  auth: appState.auth,
+});
+
+export default connect(state)(TopBar);

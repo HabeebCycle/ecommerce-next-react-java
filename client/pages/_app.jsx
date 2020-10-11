@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { Provider } from "react-redux";
 import store, { wrapper } from "../management/store";
 import "../styles/globals.css";
 import "../styles/style.scss";
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -13,12 +14,16 @@ function MyApp({ Component, pageProps }) {
     setOpen(true);
   }, []);
 
-  fancyLog();
   console.log("Page Open", open);
-  return <Component {...pageProps} />;
-}
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+};
 
 //const makeStore = () => store;
+store.subscribe(() => fancyLog());
 
 function fancyLog() {
   console.log("%c Rendered with ? ??", "background: purple; color: #fff");

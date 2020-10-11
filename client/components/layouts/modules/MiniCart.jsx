@@ -7,18 +7,18 @@ import {
 import { isStaticData } from "../../../utils/app-settings";
 import { baseUrl } from "../../../repositories/Repository";
 import { currency } from "../../../utils/app-settings";
-import store from "../../../management/store";
+import { connect } from "react-redux";
 
-const MiniCart = () => {
+const MiniCart = (props) => {
   useEffect(() => {
-    store.dispatch(getCart());
+    props.dispatch(getCart());
   }, []);
 
   const handleRemoveCartItem = (product) => {
-    store.dispatch(removeItemFromCart(product));
+    props.dispatch(removeItemFromCart(product));
   };
 
-  const { amount, cartTotal, cartItems } = store.getState().cart;
+  const { amount, cartTotal, cartItems } = props.cart;
   return (
     <div className="ps-cart--mini">
       <a className="header__extra" href="#">
@@ -95,4 +95,8 @@ const MiniCart = () => {
   );
 };
 
-export default MiniCart;
+const state = (appState) => ({
+  cart: appState.cart,
+});
+
+export default connect(state)(MiniCart);

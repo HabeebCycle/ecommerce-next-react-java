@@ -46,6 +46,10 @@
           color: $color-1st;
         }
       }
+
+      i.mobile--icons {
+        color: $color-white;
+      }
     }
   }
 
@@ -433,7 +437,15 @@
       padding-right: 5px;
 
       &:after {
-        display: none;
+        /*display: none;*/
+        content: "";
+        position: absolute;
+        /*top: 50%;*/
+        transform: translate(-50%);
+        right: 0;
+        height: 15px;
+        width: 0;
+        border-right: 2px solid #d9d9d9;
       }
     }
   }
@@ -481,6 +493,12 @@
 
       .navigation__extra {
         display: inline-block;
+
+        a {
+          &:hover {
+            color: $color-1st;
+          }
+        }
       }
     }
   }

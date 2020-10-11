@@ -1,20 +1,20 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { wrapper } from "../management/store";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/layouts/Layout";
-import store from "../management/store";
-import { setUserLogged } from "../management/reducers/authReducer/actions";
+import HomeBody from "../components/layouts/main/HomeBody";
+import SubscribePopup from "../components/shared/SubscribePopup";
+import { appSettings } from "../utils/app-settings";
 
-export default function Home() {
-  //store.dispatch(setFetchError("err.message"));
+const Home = () => {
+  const [subscribe, setSubscribe] = useState(false);
 
-  const [login, setLogin] = useState(false);
-
-  const handleLogin = () => {
-    const setLog = !login;
-    setLogin(setLog);
-    store.dispatch(setUserLogged(setLog));
-  };
+  useEffect(() => {
+    setTimeout(() => {
+      setSubscribe(true);
+    }, appSettings.subscribePopDelay);
+  }, []);
 
   return (
     <Layout>
@@ -22,14 +22,26 @@ export default function Home() {
         <Head>
           <title>Create Next App</title>
         </Head>
+        <SubscribePopup active={subscribe} />
         <main className={styles.main}>
-          <p>Almost before we knew it, we had left the building.</p>
-          <p>{login ? "I'm Logged In" : "I'm logged out"}</p>
-          <button onClick={handleLogin}>{login ? "Log out" : "Log In"}</button>
+          <HomeBody />
         </main>
 
         <footer className={styles.footer}></footer>
       </div>
     </Layout>
   );
-}
+};
+
+export const getStaticProps = wrapper.getStaticProps(
+  async ({ store, preview }) => {
+    console.log("2. Page.getStaticProps uses the store to dispatch things");
+    /*console.log(store.getState());
+    return {
+      props: { store: store.getState() },
+    };
+    //store.dispatch({type: 'TICK', payload: 'was set in other page ' + preview});*/
+  }
+);
+
+export default Home;

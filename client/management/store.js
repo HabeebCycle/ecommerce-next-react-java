@@ -8,6 +8,9 @@ const initStore = () => {
   return store;
 };
 
-export const wrapper = createWrapper(initStore);
+const makeStore = (context) => store;
+
+//export const wrapper = createWrapper(initStore);
+export const wrapper = createWrapper(makeStore, { debug: false });
 
 export default store;

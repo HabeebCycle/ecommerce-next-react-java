@@ -1,5 +1,11 @@
 export const isStaticData = false;
 
+export const appSettings = {
+  name: "Marketplace",
+  description: "Marketplace Multivendor",
+  subscribePopDelay: 3000,
+};
+
 export const currency = {
   name: "USD",
   symbol: "$",

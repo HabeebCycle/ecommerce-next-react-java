@@ -1,16 +1,17 @@
 import Link from "next/link";
+import { connect } from "react-redux";
 import { setUserLogged } from "../../../management/reducers/authReducer/actions";
 import { accountLinks } from "../../../utils/app-settings";
-import store from "../../../management/store";
 
-const AccountQuickLinks = () => {
+const AccountQuickLinks = (props) => {
   const handleLogout = (e) => {
     e.preventDefault();
-    store.dispatch(setUserLogged(false));
+    props.dispatch(setUserLogged(false));
   };
 
   //const accountLinks = [];
-  const { isLoggedIn } = store.getState().auth;
+  const { isLoggedIn } = props;
+
   if (isLoggedIn === true) {
     return (
       <div className="ps-block--user-account">
@@ -37,7 +38,7 @@ const AccountQuickLinks = () => {
     return (
       <div className="ps-block--user-header">
         <div className="ps-block__left">
-          <i className="icon-user"></i>
+          <i className="icon-user desktop--icons"></i>
         </div>
         <div className="ps-block__right">
           <Link href="/account/login">
@@ -52,4 +53,4 @@ const AccountQuickLinks = () => {
   }
 };
 
-export default AccountQuickLinks;
+export default connect(null)(AccountQuickLinks);
