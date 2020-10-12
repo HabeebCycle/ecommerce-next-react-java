@@ -18,17 +18,15 @@ const Home = () => {
 
   return (
     <Layout>
-      <div className={styles.container}>
-        <Head>
-          <title>Create Next App</title>
-        </Head>
-        <SubscribePopup active={subscribe} />
-        <main className={styles.main}>
-          <HomeBody />
-        </main>
+      <Head>
+        <title>Create Next App</title>
+      </Head>
+      <SubscribePopup active={subscribe} />
+      <main id="homepage-1">
+        <HomeBody />
+      </main>
 
-        <footer className={styles.footer}></footer>
-      </div>
+      <footer className={styles.footer}></footer>
     </Layout>
   );
 };
