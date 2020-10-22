@@ -1,4 +1,4 @@
-package com.habeebcycle.marketplace.controller;
+package com.habeebcycle.marketplace.controller.admin;
 
 import com.habeebcycle.marketplace.exception.ApplicationException;
 import com.habeebcycle.marketplace.exception.NotFoundException;
@@ -10,6 +10,7 @@ import com.habeebcycle.marketplace.payload.user.UserUpdateRequest;
 import com.habeebcycle.marketplace.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -19,12 +20,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1")
-public class UserController {
+public class AdminController {
 
     private final UserService userService;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserController(UserService userService) {
+    public AdminController(UserService userService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/users")
@@ -53,12 +56,16 @@ public class UserController {
         User user = new User(userRegisterRequest.getName(), userRegisterRequest.getUsername(),
                 userRegisterRequest.getEmail(), userRegisterRequest.getPassword());
 
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         Role role = userService.getUserRole(userRegisterRequest.getRole())
                 .orElseThrow(() -> new ApplicationException("User Role not set."));
         user.setRoles(Collections.singleton(role));
+        user.setEnabled(true);
 
-        //user.setPassword(passwordEncoder.encode(user.getPassword()));
         user = userService.addUser(user);
+
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 

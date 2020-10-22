@@ -41,6 +41,8 @@ public class User extends DateAudit {
     @Size(max = 100)
     private String password;
 
+    private Boolean isEnabled;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_roles",
@@ -101,6 +103,14 @@ public class User extends DateAudit {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        isEnabled = enabled;
     }
 
     public Set<Role> getRoles() {
