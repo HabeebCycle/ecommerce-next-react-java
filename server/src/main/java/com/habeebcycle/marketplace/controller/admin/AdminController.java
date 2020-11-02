@@ -2,8 +2,8 @@ package com.habeebcycle.marketplace.controller.admin;
 
 import com.habeebcycle.marketplace.exception.ApplicationException;
 import com.habeebcycle.marketplace.exception.NotFoundException;
-import com.habeebcycle.marketplace.model.entity.Role;
-import com.habeebcycle.marketplace.model.entity.User;
+import com.habeebcycle.marketplace.model.entity.user.Role;
+import com.habeebcycle.marketplace.model.entity.user.User;
 import com.habeebcycle.marketplace.payload.APIResponse;
 import com.habeebcycle.marketplace.payload.user.UserRegisterRequest;
 import com.habeebcycle.marketplace.payload.user.UserUpdateRequest;

@@ -1,6 +1,6 @@
 package com.habeebcycle.marketplace.repository;
 
-import com.habeebcycle.marketplace.model.entity.User;
+import com.habeebcycle.marketplace.model.entity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

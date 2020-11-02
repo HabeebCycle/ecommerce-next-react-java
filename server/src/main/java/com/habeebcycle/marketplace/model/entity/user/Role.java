@@ -1,6 +1,6 @@
-package com.habeebcycle.marketplace.model.entity;
+package com.habeebcycle.marketplace.model.entity.user;
 
-import com.habeebcycle.marketplace.model.RoleName;
+import com.habeebcycle.marketplace.model.common.RoleName;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;

@@ -1,0 +1,17 @@
+# Product Details Schema
+
+type ProductDetails {
+    shortDescription: String
+    regularPrice: Float
+    salesPrice: Float
+    salesStart: DateTime
+    salesEnd: DateTime
+    sku: String
+    type: String
+    status: String
+    weight: Float
+    dimension: String
+    notes: String
+    featured: Boolean
+    images: [Image]
+}

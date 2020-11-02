@@ -1,7 +1,7 @@
 package com.habeebcycle.marketplace.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.habeebcycle.marketplace.model.entity.User;
+import com.habeebcycle.marketplace.model.entity.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

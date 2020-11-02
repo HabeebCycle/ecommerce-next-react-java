@@ -1,7 +1,7 @@
 package com.habeebcycle.marketplace.repository;
 
-import com.habeebcycle.marketplace.model.RoleName;
-import com.habeebcycle.marketplace.model.entity.Role;
+import com.habeebcycle.marketplace.model.common.RoleName;
+import com.habeebcycle.marketplace.model.entity.user.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

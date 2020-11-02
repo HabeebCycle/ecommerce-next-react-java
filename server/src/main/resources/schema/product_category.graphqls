@@ -1,0 +1,14 @@
+# Product Category schema
+
+type ProductCategory{
+    id: ID!
+    name: String
+    slug: String
+    description: String
+    parent: ProductCategory
+    image: Image
+    createdBy: User
+    updatedBy: User
+    createdAt: DateTime
+    updatedAt: DateTime
+}

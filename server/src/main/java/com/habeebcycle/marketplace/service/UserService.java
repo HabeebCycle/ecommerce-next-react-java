@@ -1,7 +1,7 @@
 package com.habeebcycle.marketplace.service;
 
-import com.habeebcycle.marketplace.model.entity.Role;
-import com.habeebcycle.marketplace.model.entity.User;
+import com.habeebcycle.marketplace.model.entity.user.Role;
+import com.habeebcycle.marketplace.model.entity.user.User;
 import com.habeebcycle.marketplace.repository.RoleRepository;
 import com.habeebcycle.marketplace.repository.UserRepository;
 import org.slf4j.Logger;

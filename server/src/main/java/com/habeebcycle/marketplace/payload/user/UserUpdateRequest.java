@@ -1,6 +1,6 @@
 package com.habeebcycle.marketplace.payload.user;
 
-import com.habeebcycle.marketplace.model.UserDetails;
+import com.habeebcycle.marketplace.model.entity.user.UserDetails;
 
 import javax.validation.constraints.*;
 

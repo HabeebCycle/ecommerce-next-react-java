@@ -12,7 +12,8 @@ spring:
     initialization-mode: always
     password:
     username: root
-    url: jdbc:mysql://127.0.0.1:3306/marketplace?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false #It will always use MySQL:SELECT @@GLOBAL.time_zone;
+    #It will always use MySQL:SELECT @@GLOBAL.time_zone;
+    url: jdbc:mysql://127.0.0.1:3306/marketplace?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
 
   ## Hibernate Properties
   # The SQL dialect makes Hibernate generate better SQL for the chosen database
@@ -29,11 +30,23 @@ spring:
       WRITE_DATES_AS_TIMESTAMPS: false
     timezone: UTC
 
+  servlet:
+    multipart:
+      enabled: true
+      location: temp123
+      file-size-threshold: 5MB
+      max-file-size: 2MB
+      max-request-size: 10MB
+
 
 # Application specific custom properties
 app:
   config:
     max_age_secs: 3600
   jwt:
-    secret: JWTSuperTokenSecretKey
+    secret: JWTSuperTokenSecretKeyAndJWTSuperTokenSecretKey
     expiration: 604800000 # 7 days expiration time in milli-seconds
+  file:
+    storage:
+      location: media-storage
+      max-size: 2048000

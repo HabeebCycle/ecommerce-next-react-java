@@ -1,6 +1,5 @@
-package com.habeebcycle.marketplace.model.entity;
+package com.habeebcycle.marketplace.model.entity.user;
 
-import com.habeebcycle.marketplace.model.UserDetails;
 import com.habeebcycle.marketplace.model.audit.DateAudit;
 import org.hibernate.annotations.NaturalId;
 

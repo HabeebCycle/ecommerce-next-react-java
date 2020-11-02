@@ -1,7 +1,7 @@
 package com.habeebcycle.marketplace.controller.user;
 
 import com.habeebcycle.marketplace.exception.NotFoundException;
-import com.habeebcycle.marketplace.model.entity.User;
+import com.habeebcycle.marketplace.model.entity.user.User;
 import com.habeebcycle.marketplace.payload.user.UserIdentityAvailability;
 import com.habeebcycle.marketplace.security.CurrentUser;
 import com.habeebcycle.marketplace.security.UserPrincipal;

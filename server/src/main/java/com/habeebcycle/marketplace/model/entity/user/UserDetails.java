@@ -1,4 +1,4 @@
-package com.habeebcycle.marketplace.model;
+package com.habeebcycle.marketplace.model.entity.user;
 
 public class UserDetails {
     private String billingCountry;

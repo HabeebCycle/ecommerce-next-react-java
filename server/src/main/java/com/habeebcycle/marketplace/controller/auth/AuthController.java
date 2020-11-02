@@ -1,8 +1,8 @@
 package com.habeebcycle.marketplace.controller.auth;
 
 import com.habeebcycle.marketplace.exception.ApplicationException;
-import com.habeebcycle.marketplace.model.entity.Role;
-import com.habeebcycle.marketplace.model.entity.User;
+import com.habeebcycle.marketplace.model.entity.user.Role;
+import com.habeebcycle.marketplace.model.entity.user.User;
 import com.habeebcycle.marketplace.payload.APIResponse;
 import com.habeebcycle.marketplace.payload.auth.JwtAuthenticationResponse;
 import com.habeebcycle.marketplace.payload.auth.LoginRequest;

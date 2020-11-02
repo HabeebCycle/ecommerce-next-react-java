@@ -1,0 +1,17 @@
+# Product Schema
+
+type Product {
+    id: ID!
+    title: String
+    slug: String
+    price: Float
+    description: String
+    category: ProductCategory
+    thumbnail: Image
+    productDetails: ProductDetails
+    owner: User
+    createdBy: User
+    updatedBy: User
+    createdAt: DateTime
+    updatedAt: DateTime
+}

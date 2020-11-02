@@ -1,4 +1,4 @@
-package com.habeebcycle.marketplace.model;
+package com.habeebcycle.marketplace.model.common;
 
 public enum RoleName {
     ROLE_ADMIN,
