@@ -1,15 +1,16 @@
 package com.habeebcycle.marketplace.controller.category;
 
+import com.habeebcycle.marketplace.exception.BadRequestException;
 import com.habeebcycle.marketplace.exception.NotFoundException;
 import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
 import com.habeebcycle.marketplace.payload.ResourceAvailability;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryRequest;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryResponse;
 import com.habeebcycle.marketplace.service.ProductCategoryService;
-import org.jetbrains.annotations.NotNull;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,46 +51,74 @@ public class ProductCategoryController {
         return productCategoryService.getCategoryResponse(category);
     }
 
-    @GetMapping("/slug-available")
-    public ResourceAvailability checkResourceAvailability(@RequestParam(value = "slug") String slug){
+    @GetMapping("/slug-available/{slug}")
+    public ResourceAvailability checkResourceAvailability(@PathVariable String slug){
         Boolean isAvailable = !productCategoryService.slugExists(slug);
         return new ResourceAvailability(isAvailable);
     }
 
-    @PostMapping
-    public ProductCategoryResponse addNewCategory(@NotNull @Valid @ModelAttribute ProductCategoryRequest request) {
-        Long image = productCategoryService.getImage(request.getImage(), request.getName(), request.getUrl());
-        String slug = productCategoryService.formatSlug(request.getSlug());
-        ProductCategory category = new ProductCategory(request.getName(), slug, request.getDescription());
+    @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.APPLICATION_JSON_VALUE},
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ProductCategoryResponse addNewCategory(@RequestPart(value = "category") String categoryJson,
+                                                  @RequestPart(name = "file", required = false) MultipartFile file) {
 
-        if(request.getParent() > 0) category.setParent(request.getParent());
-        if(image != null) category.setImage(image);
+        try {
+            ProductCategoryRequest request = productCategoryService.convertCategoryString(categoryJson);
 
-        category = productCategoryService.addCategory(category);
+            Long image = productCategoryService.getImage(file, request.getName(), request.getUrl());
+            String slug = productCategoryService.formatSlug(request.getSlug());
+            ProductCategory category = new ProductCategory(request.getName(), slug, request.getDescription());
 
-        return productCategoryService.getCategoryResponse(category);
+            if (request.getParent() != null) category.setParent(request.getParent());
+            if (image != null) category.setImage(image);
+
+            category = productCategoryService.addCategory(category);
+
+            return productCategoryService.getCategoryResponse(category);
+        }catch (Exception ex){
+            ex.printStackTrace();
+            throw new BadRequestException("Request is bad. Check the form data!", ex);
+        }
     }
 
-    @PutMapping("/{catId}")
-    public ProductCategoryResponse updateCategory(@NotNull @Valid @ModelAttribute ProductCategoryRequest request,
+    @PutMapping(path = "/{catId}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.APPLICATION_JSON_VALUE},
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ProductCategoryResponse updateCategory(@RequestPart("category") String categoryJson,
+                                                  @RequestPart(name = "file", required = false) MultipartFile file,
                                                   @PathVariable Long catId){
         ProductCategory category = productCategoryService.getCategoryById(catId)
                 .orElseThrow(() -> new NotFoundException("Product Category", "Id", "" + catId));
 
-        Long image = productCategoryService.updateImage(category.getImage(), request.getImage(),
-                request.getName(), request.getUrl());
-        String slug = !category.getSlug().equalsIgnoreCase(request.getSlug())
-                ? productCategoryService.formatSlug(request.getSlug()) : request.getSlug();
+        try {
+            ProductCategoryRequest request = productCategoryService.convertCategoryString(categoryJson);
 
-        category.setName(request.getName());
-        category.setSlug(slug);
-        category.setDescription(request.getDescription());
-        if(request.getParent() > 0) category.setParent(request.getParent());
-        if(image != null) category.setImage(image);
+            Long image = productCategoryService.updateImage(category.getImage(), file,
+                    request.getName(), request.getUrl());
+            String slug = !category.getSlug().equalsIgnoreCase(request.getSlug())
+                    ? productCategoryService.formatSlug(request.getSlug()) : request.getSlug();
 
-        category = productCategoryService.updateCategory(category);
+            category.setName(request.getName());
+            category.setSlug(slug);
+            category.setDescription(request.getDescription());
+            if (request.getParent() != null) category.setParent(request.getParent());
+            if (image != null) category.setImage(image);
 
-        return productCategoryService.getCategoryResponse(category);
+            category = productCategoryService.updateCategory(category);
+
+            return productCategoryService.getCategoryResponse(category);
+        }catch (Exception ex){
+            ex.printStackTrace();
+            throw new BadRequestException("Request is bad. Check the form data!", ex);
+        }
+    }
+
+    @DeleteMapping("/{catId}")
+    public void deleteCategory(@PathVariable Long catId){
+        ProductCategory category = productCategoryService.getCategoryById(catId).orElse(null);
+        if(category != null){
+            productCategoryService.deleteImage(category.getImage());
+            productCategoryService.deleteCategory(category.getId());
+        }
     }
 
 }

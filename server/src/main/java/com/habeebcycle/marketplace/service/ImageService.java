@@ -48,6 +48,8 @@ public class ImageService {
         return imageRepository.findById(id).orElse(null);
     }
 
+    public List<Image> getAllImages(){return imageRepository.findAll();}
+
     public List<Image> getImages(List<Long> ids){
         return imageRepository.findAllById(ids);
     }
@@ -76,6 +78,8 @@ public class ImageService {
         imageRepository.deleteAll(imageRepository.findAllById(ids));
     }
 
+    public void deleteAllImages(){deleteAllFiles(); imageRepository.deleteAll();}
+
     public Image storeFile(MultipartFile file, String folder, String name, String url) {
         Image image = null;
         if(file == null || file.isEmpty() || !isMimeTypeSupported(file.getContentType()) || file.getSize() > fileMaxSize){
@@ -93,7 +97,7 @@ public class ImageService {
 
         try {
             String ext = getFileExtension(file.getOriginalFilename());
-            String fileName = name.substring(0, 3) + "-" + UUID.randomUUID() + "." + ext;
+            String fileName = folder + "-" + UUID.randomUUID() + "." + ext;
             Path filePath = Paths.get(fileStoragePath + "\\" + folder + "\\" + fileName);
 
             image = new Image();
@@ -125,6 +129,14 @@ public class ImageService {
         return false;
     }
 
+    public void deleteAllFiles(){
+        try {
+            Path path = Paths.get(fileStoragePath + "\\");
+            Files.deleteIfExists(path);
+        } catch (IOException ignored) {
+        }
+    }
+
     public Image updateFile(MultipartFile file, Long id, String folder, String name, String url){
         deleteFile(id, folder);
         return storeFile(file, folder, name, url);
@@ -148,7 +160,7 @@ public class ImageService {
 
     private String getImageUrl(String fileName, String folder){
         return ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/media/image/" + folder)
+                .path("/media/image/" + folder + "/")
                 .path(fileName)
                 .toUriString();
     }

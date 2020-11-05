@@ -1,18 +1,15 @@
 package com.habeebcycle.marketplace.payload.category;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 public class ProductCategoryRequest {
 
-    @NotBlank @Size(min = 3, max = 255) private String name;
-    @NotBlank private String slug;
+    private String name;
+    String slug;
     private String description;
     private Long parent;
     private String url;
-    private MultipartFile image;
 
     public String getName() {
         return name;
@@ -52,13 +49,5 @@ public class ProductCategoryRequest {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public MultipartFile getImage() {
-        return image;
-    }
-
-    public void setImage(MultipartFile image) {
-        this.image = image;
     }
 }

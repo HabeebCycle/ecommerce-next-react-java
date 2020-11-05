@@ -1,6 +1,7 @@
 package com.habeebcycle.marketplace.config;
 
 import com.habeebcycle.marketplace.security.CustomUserDetailsService;
+import com.habeebcycle.marketplace.util.ApplicationConfigConstants;
 import com.habeebcycle.marketplace.security.jwt.JwtAuthenticationEntryPoint;
 import com.habeebcycle.marketplace.security.jwt.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
@@ -80,24 +81,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                    .antMatchers("/",
-                            "/favicon.ico",
-                            "/**/*.png",
-                            "/**/*.gif",
-                            "/**/*.svg",
-                            "/**/*.jpg",
-                            "/**/*.html",
-                            "/**/*.css",
-                            "/**/*.js")
+                    .antMatchers(ApplicationConfigConstants.PUBLIC_ENDPOINTS)
                         .permitAll()
-                    .antMatchers("/api/v1/auth/**")
+                    .antMatchers(ApplicationConfigConstants.AUTH_ENDPOINTS)
                         .permitAll()
-                    .antMatchers("/api/v1/user/checkUsernameAvailability",
-                            "/api/v1/user/checkEmailAvailability")
+                    .antMatchers(ApplicationConfigConstants.USER_AVAILABILITY_ENDPOINT,
+                            ApplicationConfigConstants.EMAIL_AVAILABILITY_ENDPOINT)
                         .permitAll()
-                    .antMatchers(HttpMethod.GET, "/api/v1/products/**", "/api/v1/product-categories/**",
-                            "/api/v1/brands/**", "/api/v1/banners/**", "/api/v1/promotions/**", "/api/v1/stores/**",
-                            "/api/v1/collections/**", "/api/v1/posts/**", "/graphiql")
+                    .antMatchers(HttpMethod.GET, ApplicationConfigConstants.PRODUCT_ENDPOINTS,
+                            ApplicationConfigConstants.PRODUCT_CATEGORY_ENDPOINTS, ApplicationConfigConstants.BRAND_ENDPOINTS,
+                            ApplicationConfigConstants.BANNER_ENDPOINTS, ApplicationConfigConstants.PROMOTION_ENDPOINTS,
+                            ApplicationConfigConstants.STORE_ENDPOINTS, ApplicationConfigConstants.COLLECTION_ENDPOINTS,
+                            ApplicationConfigConstants.POST_ENDPOINTS, ApplicationConfigConstants.GRAPHQL_ENDPOINT)
                         .permitAll()
                     .anyRequest()
                         .authenticated();

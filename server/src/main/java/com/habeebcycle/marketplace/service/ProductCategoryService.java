@@ -1,8 +1,11 @@
 package com.habeebcycle.marketplace.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.habeebcycle.marketplace.model.entity.Image;
 import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
 import com.habeebcycle.marketplace.model.entity.util.ChildCategory;
+import com.habeebcycle.marketplace.payload.category.ProductCategoryRequest;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryResponse;
 import com.habeebcycle.marketplace.repository.ProductCategoryRepository;
 import org.springframework.stereotype.Service;
@@ -44,11 +47,24 @@ public class ProductCategoryService {
         return productCategoryRepository.existsBySlug(slug);
     }
 
+    public Boolean categoryExistsById(Long id){
+        return productCategoryRepository.existsById(id);
+    }
+
+    public Long getCategoryCount(){
+        return productCategoryRepository.count();
+    }
+
     public ProductCategory addCategory(ProductCategory category){
+        category.setSlug(formatSlug(category.getSlug()));
         return productCategoryRepository.save(category);
     }
 
     public ProductCategory updateCategory(ProductCategory category){
+        getCategoryById(category.getId())
+                .ifPresent(oldCat -> category.setSlug(
+                oldCat.getSlug().equalsIgnoreCase(category.getSlug())
+                        ? category.getSlug() : formatSlug(category.getSlug()) ));
         return productCategoryRepository.save(category);
     }
 
@@ -56,15 +72,20 @@ public class ProductCategoryService {
         productCategoryRepository.deleteById(id);
     }
 
-    public void deleteCategory(ProductCategory category){
-        productCategoryRepository.delete(category);
+    public void deleteAllCategory(){
+        productCategoryRepository.deleteAll();
     }
 
     public ProductCategoryResponse getCategoryResponse(ProductCategory category){
-        List<ChildCategory> children = collateChildren(category.getParent());
-        Image image = imageService.getImage(category.getImage());
-        return new ProductCategoryResponse(category.getId(), category.getName(), category.getSlug(),
+        List<ChildCategory> children = collateChildren(category.getId());
+        Image image = category.getImage() != null ? imageService.getImage(category.getImage()) : null;
+        ProductCategoryResponse response = new ProductCategoryResponse(category.getId(), category.getName(), category.getSlug(),
                 category.getDescription(), children, image);
+        response.setCreatedAt(category.getCreatedAt());
+        response.setUpdatedAt(category.getUpdatedAt());
+        response.setCreatedBy(category.getCreatedBy());
+        response.setUpdatedBy(category.getUpdatedBy());
+        return response;
     }
 
     public List<ChildCategory> collateChildren(Long parent){
@@ -87,14 +108,24 @@ public class ProductCategoryService {
         return null;
     }
 
-    public Long updateImage(Long id, MultipartFile file, String name, String url){
-         if(id == null){
+    public Long updateImage(Long imgId, MultipartFile file, String name, String url){
+         if(imgId == null){
             return getImage(file, name, url);
         }else{
-            Image image = imageService.updateFile(file, id, IMAGE_FOLDER, name, url);
-            image.setId(id);
+            Image image = imageService.updateFile(file, imgId, IMAGE_FOLDER, name, url);
+            image.setId(imgId);
             return imageService.updateImage(image).getId();
         }
+    }
+
+    public void deleteImage(Long imgId){
+        imageService.deleteFile(imgId, IMAGE_FOLDER);
+        imageService.deleteImage(imgId);
+    }
+
+    public ProductCategoryRequest convertCategoryString(String categoryJson) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(categoryJson, ProductCategoryRequest.class);
     }
 
     public String formatSlug(String slug){
