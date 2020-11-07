@@ -1,11 +1,11 @@
 # Product Category schema
 
-type ProductCategory{
+type ProductCategoryResponse{
     id: ID!
     name: String
     slug: String
     description: String
-    parent: ProductCategory
+    children: [ChildCategory]
     image: Image
     createdBy: User
     updatedBy: User

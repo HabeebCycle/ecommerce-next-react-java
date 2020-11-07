@@ -83,6 +83,11 @@
 			<artifactId>graphiql-spring-boot-starter</artifactId>
 			<version>5.0.2</version>
 		</dependency>
+		<!--<dependency>
+			<groupId>com.zhokhov.graphql</groupId>
+			<artifactId>graphql-datetime-spring-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>-->
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>

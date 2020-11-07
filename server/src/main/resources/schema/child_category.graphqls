@@ -1,0 +1,8 @@
+# Product Category Child schema
+
+type ChildCategory{
+    id: ID!
+    name: String
+    slug: String
+    link: String
+}

@@ -14,14 +14,9 @@ scalar DateTime
 
 # The Root Query for the application
 type Query {
-    product(id: ID!) : Product
-    productCategory(id: ID!) : ProductCategory
-    image(id: ID!) : Image
-    products : [Product]
-    productCategories : [ProductCategory]
+    productCategory(id: ID!) : ProductCategoryResponse,
+    productCategories : [ProductCategoryResponse]
 }
 
 # The Root Mutation for the application
-type Mutation {
-
-}
+#type Mutation {}

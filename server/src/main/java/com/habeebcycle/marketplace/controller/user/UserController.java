@@ -6,11 +6,12 @@ import com.habeebcycle.marketplace.payload.user.UserIdentityAvailability;
 import com.habeebcycle.marketplace.security.CurrentUser;
 import com.habeebcycle.marketplace.security.UserPrincipal;
 import com.habeebcycle.marketplace.service.UserService;
+import com.habeebcycle.marketplace.util.ApplicationConstants;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping(ApplicationConstants.USER_ENDPOINT)
 public class UserController {
 
     private final UserService userService;
@@ -19,25 +20,25 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/user/me")
+    @GetMapping("/me")
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_SUPER_USER', 'ROLE_SELLER', 'ROLE_MANAGER', 'ROLE_CUSTOMER')")
     public User getCurrentUser(@CurrentUser UserPrincipal currentUser){
         return userService.getUser(currentUser.getId()).get();
     }
 
-    @GetMapping("/user/checkUsernameAvailability")
+    @GetMapping("/checkUsernameAvailability")
     public UserIdentityAvailability checkUsernameAvailability(@RequestParam(value = "username") String username){
         Boolean isAvailable = !userService.usernameExists(username);
         return new UserIdentityAvailability(isAvailable);
     }
 
-    @GetMapping("/user/checkEmailAvailability")
+    @GetMapping("/checkEmailAvailability")
     public UserIdentityAvailability checkEmailAvailability(@RequestParam(value = "email") String email){
         Boolean isAvailable = !userService.emailExists(email);
         return new UserIdentityAvailability(isAvailable);
     }
 
-    @GetMapping("/users/{username}")
+    @GetMapping("/{username}")
     public User getUserProfile(@PathVariable(value = "username") String username){
         return userService.getUserByUsername(username)
                 .orElseThrow(() -> new NotFoundException("User", "username", username));

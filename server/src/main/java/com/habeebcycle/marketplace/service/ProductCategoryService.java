@@ -7,7 +7,9 @@ import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
 import com.habeebcycle.marketplace.model.entity.util.ChildCategory;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryRequest;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryResponse;
+import com.habeebcycle.marketplace.payload.user.UserSummary;
 import com.habeebcycle.marketplace.repository.ProductCategoryRepository;
+import com.habeebcycle.marketplace.util.ApplicationConstants;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,11 +22,14 @@ public class ProductCategoryService {
 
     private final ProductCategoryRepository productCategoryRepository ;
     private final ImageService imageService;
+    private final UserService userService;
     private final String IMAGE_FOLDER = "product-category";
 
-    public ProductCategoryService(ProductCategoryRepository productCategoryRepository, ImageService imageService) {
+    public ProductCategoryService(ProductCategoryRepository productCategoryRepository, ImageService imageService,
+                                  UserService userService) {
         this.productCategoryRepository = productCategoryRepository;
         this.imageService = imageService;
+        this.userService = userService;
     }
 
     public Optional<ProductCategory> getCategoryById(Long id){
@@ -83,8 +88,13 @@ public class ProductCategoryService {
                 category.getDescription(), children, image);
         response.setCreatedAt(category.getCreatedAt());
         response.setUpdatedAt(category.getUpdatedAt());
-        response.setCreatedBy(category.getCreatedBy());
-        response.setUpdatedBy(category.getUpdatedBy());
+
+        userService.getUser(category.getCreatedBy()).ifPresent(user -> {
+            response.setCreatedBy(new UserSummary(user.getId(), user.getUsername(), user.getName()));
+        });
+        userService.getUser(category.getUpdatedBy()).ifPresent(user -> {
+            response.setUpdatedBy(new UserSummary(user.getId(), user.getUsername(), user.getName()));
+        });
         return response;
     }
 
@@ -93,7 +103,7 @@ public class ProductCategoryService {
         getChildrenCategory(parent)
                 .forEach(category -> {
                     ChildCategory childCategory = new ChildCategory(category.getId(), category.getName(),
-                            category.getSlug(), "/api/v1/product-category/" + category.getId());
+                            category.getSlug(), ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + category.getId());
                     childCategories.add(childCategory);
                 });
         return childCategories;

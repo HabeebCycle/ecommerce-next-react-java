@@ -9,6 +9,7 @@ import com.habeebcycle.marketplace.payload.auth.LoginRequest;
 import com.habeebcycle.marketplace.payload.auth.SignUpRequest;
 import com.habeebcycle.marketplace.security.jwt.JwtTokenProvider;
 import com.habeebcycle.marketplace.service.UserService;
+import com.habeebcycle.marketplace.util.ApplicationConstants;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,7 +28,7 @@ import java.net.URI;
 import java.util.Collections;
 
 @RestController
-@RequestMapping("/api/v1/auth")
+@RequestMapping(ApplicationConstants.AUTH_ENDPOINT)
 public class AuthController {
 
     private  final AuthenticationManager authenticationManager;

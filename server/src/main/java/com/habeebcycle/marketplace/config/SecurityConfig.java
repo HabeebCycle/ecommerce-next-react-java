@@ -1,7 +1,7 @@
 package com.habeebcycle.marketplace.config;
 
 import com.habeebcycle.marketplace.security.CustomUserDetailsService;
-import com.habeebcycle.marketplace.util.ApplicationConfigConstants;
+import com.habeebcycle.marketplace.util.ApplicationConstants;
 import com.habeebcycle.marketplace.security.jwt.JwtAuthenticationEntryPoint;
 import com.habeebcycle.marketplace.security.jwt.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
@@ -81,18 +81,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                    .antMatchers(ApplicationConfigConstants.PUBLIC_ENDPOINTS)
-                        .permitAll()
-                    .antMatchers(ApplicationConfigConstants.AUTH_ENDPOINTS)
-                        .permitAll()
-                    .antMatchers(ApplicationConfigConstants.USER_AVAILABILITY_ENDPOINT,
-                            ApplicationConfigConstants.EMAIL_AVAILABILITY_ENDPOINT)
-                        .permitAll()
-                    .antMatchers(HttpMethod.GET, ApplicationConfigConstants.PRODUCT_ENDPOINTS,
-                            ApplicationConfigConstants.PRODUCT_CATEGORY_ENDPOINTS, ApplicationConfigConstants.BRAND_ENDPOINTS,
-                            ApplicationConfigConstants.BANNER_ENDPOINTS, ApplicationConfigConstants.PROMOTION_ENDPOINTS,
-                            ApplicationConfigConstants.STORE_ENDPOINTS, ApplicationConfigConstants.COLLECTION_ENDPOINTS,
-                            ApplicationConfigConstants.POST_ENDPOINTS, ApplicationConfigConstants.GRAPHQL_ENDPOINT)
+                    .antMatchers(ApplicationConstants.GRAPHQL_ENDPOINTS).permitAll()
+                    .antMatchers(ApplicationConstants.PUBLIC_ENDPOINTS).permitAll()
+                    .antMatchers(ApplicationConstants.AUTH_ENDPOINTS).permitAll()
+                    .antMatchers(ApplicationConstants.USER_AVAILABILITY_ENDPOINT,
+                            ApplicationConstants.EMAIL_AVAILABILITY_ENDPOINT).permitAll()
+                    .antMatchers(HttpMethod.GET, ApplicationConstants.PRODUCT_ENDPOINTS,
+                            ApplicationConstants.PRODUCT_CATEGORY_ENDPOINTS, ApplicationConstants.BRAND_ENDPOINTS,
+                            ApplicationConstants.BANNER_ENDPOINTS, ApplicationConstants.PROMOTION_ENDPOINTS,
+                            ApplicationConstants.STORE_ENDPOINTS, ApplicationConstants.COLLECTION_ENDPOINTS,
+                            ApplicationConstants.POST_ENDPOINTS, ApplicationConstants.GRAPHIQL_ENDPOINTS,
+                            ApplicationConstants.GRAPHIQL_ENDPOINT, ApplicationConstants.SUBSCRIPTION_ENDPOINT)
                         .permitAll()
                     .anyRequest()
                         .authenticated();

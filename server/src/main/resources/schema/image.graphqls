@@ -5,14 +5,10 @@ type Image {
     src: String
     name: String
     alt: String
-    width: Int
-    height: Int
     ext: String
     mime: String
-    size: Float
-    url: String
-    createdBy: User
-    updatedBy: User
+    size: Int
+    external: Boolean
     createdAt: DateTime
     updatedAt: DateTime
 }

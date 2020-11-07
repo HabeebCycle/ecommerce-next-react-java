@@ -7,6 +7,7 @@ import com.habeebcycle.marketplace.payload.ResourceAvailability;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryRequest;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryResponse;
 import com.habeebcycle.marketplace.service.ProductCategoryService;
+import com.habeebcycle.marketplace.util.ApplicationConstants;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/product-category")
+@RequestMapping(ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT)
 public class ProductCategoryController {
 
     private final ProductCategoryService productCategoryService;

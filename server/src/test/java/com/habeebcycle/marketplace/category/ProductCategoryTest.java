@@ -4,7 +4,7 @@ import com.habeebcycle.marketplace.config.TestSecurityConfig;
 import com.habeebcycle.marketplace.exception.ApplicationException;
 import com.habeebcycle.marketplace.model.entity.Image;
 import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
-import com.habeebcycle.marketplace.util.ApplicationConfigConstants;
+import com.habeebcycle.marketplace.util.ApplicationConstants;
 import com.habeebcycle.marketplace.service.ImageService;
 import com.habeebcycle.marketplace.service.ProductCategoryService;
 import org.apache.commons.io.IOUtils;
@@ -36,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         classes = {TestSecurityConfig.class},
-        properties = {"spring.main.allow-bean-definition-overriding=true",
+        properties = {"spring.main.allow-bean-definition-overriding=true", "spring.codec.max-in-memory-size=20MB",
                 "spring.datasource.url=jdbc:h2:mem:marketplace-db", "spring.jpa.properties.hibernate.dialect="})
 public class ProductCategoryTest {
 
@@ -90,6 +90,8 @@ public class ProductCategoryTest {
                 .jsonPath("$.available").isEqualTo(false);
 
         assertNotNull(getAndVerifyCategory("/" + pCat.getId()).returnResult().getResponseBody());
+        //System.out.println(new String(getAndVerifyCategory("/" + pCat.getId()).returnResult().getResponseBody()));
+        assertEquals(getAndVerifyImage("/media/image/product-category/" + catImg.getName()).returnResult().getResponseBody().length, getTestFile().length);
     }
 
     @Test
@@ -134,7 +136,10 @@ public class ProductCategoryTest {
         getAndVerifyCategory("/" + pCat.getId())
                 .jsonPath("$.name").isEqualTo("Clothing and Apparels 2");
 
+        catImg = imageService.getAllImages().get(0);
+
         assertNotNull(getAndVerifyCategory("/" + pCat.getId()).returnResult().getResponseBody());
+        assertEquals(getAndVerifyImage("/media/image/product-category/" + catImg.getName()).returnResult().getResponseBody().length, getTestFile2().length);
     }
 
     @Test
@@ -215,7 +220,7 @@ public class ProductCategoryTest {
 
         assertEquals(0, productCategoryService.getAllCategory().size());
         assertEquals(0, imageService.getAllImages().size());
-
+        assertNull(getAndVerifyImage("/media/image/product-category/" + catImg.getName()).returnResult().getResponseBody());
     }
 
     String getTestRequest(){
@@ -283,7 +288,7 @@ public class ProductCategoryTest {
 
         //CAN ONLY MAKE A POST REQUEST
         MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-        mockMvc.perform(MockMvcRequestBuilders.multipart(ApplicationConfigConstants.PRODUCT_CATEGORY_ENDPOINT)
+        mockMvc.perform(MockMvcRequestBuilders.multipart(ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT)
                 .file(file)
                 .file(category))
                 .andExpect(status().is(200));
@@ -293,7 +298,7 @@ public class ProductCategoryTest {
         MockMultipartFile category = new MockMultipartFile("category", "", "application/json", getTestRequest().getBytes());
 
         MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-        mockMvc.perform(MockMvcRequestBuilders.multipart(ApplicationConfigConstants.PRODUCT_CATEGORY_ENDPOINT)
+        mockMvc.perform(MockMvcRequestBuilders.multipart(ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT)
                 //.file(file)
                 .file(category))
                 .andExpect(status().is(200));
@@ -309,7 +314,7 @@ public class ProductCategoryTest {
         multipartBodyBuilder.part("category", getTestRequest2().getBytes());//.contentType(MediaType.MULTIPART_FORM_DATA);
 
         client.put()
-                .uri(ApplicationConfigConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + id)
+                .uri(ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + id)
                 .body(BodyInserters.fromMultipartData(multipartBodyBuilder.build()))
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
@@ -323,7 +328,7 @@ public class ProductCategoryTest {
         multipartBodyBuilder.part("category", getTestRequest2().getBytes());
 
         client.put()
-                .uri(ApplicationConfigConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + id)
+                .uri(ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + id)
                 .body(BodyInserters.fromMultipartData(multipartBodyBuilder.build()))
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
@@ -334,7 +339,7 @@ public class ProductCategoryTest {
 
     WebTestClient.BodyContentSpec getAndVerifyCategory(String path){
         return client.get()
-                .uri(ApplicationConfigConstants.PRODUCT_CATEGORY_ENDPOINT + path)
+                .uri(ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT + path)
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
                 .expectStatus().isOk()
@@ -342,9 +347,17 @@ public class ProductCategoryTest {
                 .expectBody();
     }
 
+    WebTestClient.BodyContentSpec getAndVerifyImage(String path){
+        return client.get()
+                .uri(path)
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody();
+    }
+
     void deleteAndVerifyCategory(Long id){
         client.delete()
-                .uri(ApplicationConfigConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + id)
+                .uri(ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + id)
                 .exchange()
                 .expectStatus().isOk() ;
     }

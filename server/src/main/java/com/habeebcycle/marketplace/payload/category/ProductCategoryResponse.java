@@ -2,6 +2,7 @@ package com.habeebcycle.marketplace.payload.category;
 
 import com.habeebcycle.marketplace.model.entity.Image;
 import com.habeebcycle.marketplace.model.entity.util.ChildCategory;
+import com.habeebcycle.marketplace.payload.user.UserSummary;
 
 import java.time.Instant;
 import java.util.List;
@@ -15,8 +16,8 @@ public class ProductCategoryResponse {
     private Image image;
     private Instant createdAt;
     private Instant updatedAt;
-    private Long createdBy;
-    private Long updatedBy;
+    private UserSummary createdBy;
+    private UserSummary updatedBy;
 
     public ProductCategoryResponse() {
     }
@@ -94,19 +95,19 @@ public class ProductCategoryResponse {
         this.updatedAt = updatedAt;
     }
 
-    public Long getCreatedBy() {
+    public UserSummary getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(Long createdBy) {
+    public void setCreatedBy(UserSummary createdBy) {
         this.createdBy = createdBy;
     }
 
-    public Long getUpdatedBy() {
+    public UserSummary getUpdatedBy() {
         return updatedBy;
     }
 
-    public void setUpdatedBy(Long updatedBy) {
+    public void setUpdatedBy(UserSummary updatedBy) {
         this.updatedBy = updatedBy;
     }
 }

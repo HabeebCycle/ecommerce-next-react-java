@@ -8,6 +8,7 @@ import com.habeebcycle.marketplace.payload.APIResponse;
 import com.habeebcycle.marketplace.payload.user.UserRegisterRequest;
 import com.habeebcycle.marketplace.payload.user.UserUpdateRequest;
 import com.habeebcycle.marketplace.service.UserService;
+import com.habeebcycle.marketplace.util.ApplicationConstants;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,7 +20,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping(ApplicationConstants.ADMIN_ENDPOINT)
 public class AdminController {
 
     private final UserService userService;
