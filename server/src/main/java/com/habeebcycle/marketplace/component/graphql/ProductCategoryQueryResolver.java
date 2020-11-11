@@ -5,7 +5,6 @@ import com.habeebcycle.marketplace.exception.NotFoundException;
 import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryResponse;
 import com.habeebcycle.marketplace.service.ProductCategoryService;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

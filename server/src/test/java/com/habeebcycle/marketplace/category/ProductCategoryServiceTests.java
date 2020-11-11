@@ -18,7 +18,7 @@ import static org.springframework.transaction.annotation.Propagation.NOT_SUPPORT
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         properties = {"spring.datasource.url=jdbc:h2:mem:marketplace-db", "spring.jpa.properties.hibernate.dialect="})
 @Transactional(propagation = NOT_SUPPORTED)
-public class ProductCategoryServiceTest {
+public class ProductCategoryServiceTests {
 
     @Autowired ProductCategoryService productCategoryService;
 

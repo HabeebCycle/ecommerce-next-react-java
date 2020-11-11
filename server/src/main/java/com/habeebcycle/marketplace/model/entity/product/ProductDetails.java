@@ -2,18 +2,21 @@ package com.habeebcycle.marketplace.model.entity.product;
 
 import org.hibernate.annotations.Formula;
 
+import javax.persistence.Column;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 public class ProductDetails {
 
     @Size(max = 65535) private String shortDescription;
-    @Digits(integer = 10, fraction = 2) private BigDecimal regularPrice;
-    @Digits(integer = 10, fraction = 2) private BigDecimal salesPrice;
-    private Instant salesStart;
-    private Instant salesEnd;
+    @DecimalMin(value = "0.0") private BigDecimal regularPrice;
+    @DecimalMin(value = "0.0") private BigDecimal salesPrice;
+    @Column(name = "sales_start") private LocalDateTime salesStart;
+    @Column(name = "sales_end") private LocalDateTime salesEnd;
     private String sku;
     private String type;
     private String status;
@@ -22,7 +25,7 @@ public class ProductDetails {
     private String notes;
     private Integer stock;
     private Boolean featured;
-    @Formula("salesEnd - salesStart > 0") private Boolean onSales;
+    //@Formula("sales_end - sales_start > 0") private Boolean onSales;
     private String images;
 
     public String getShortDescription() {
@@ -49,19 +52,19 @@ public class ProductDetails {
         this.salesPrice = salesPrice;
     }
 
-    public Instant getSalesStart() {
+    public LocalDateTime getSalesStart() {
         return salesStart;
     }
 
-    public void setSalesStart(Instant salesStart) {
+    public void setSalesStart(LocalDateTime salesStart) {
         this.salesStart = salesStart;
     }
 
-    public Instant getSalesEnd() {
+    public LocalDateTime getSalesEnd() {
         return salesEnd;
     }
 
-    public void setSalesEnd(Instant salesEnd) {
+    public void setSalesEnd(LocalDateTime salesEnd) {
         this.salesEnd = salesEnd;
     }
 
@@ -127,14 +130,6 @@ public class ProductDetails {
 
     public void setFeatured(Boolean featured) {
         this.featured = featured;
-    }
-
-    public Boolean getOnSales() {
-        return onSales;
-    }
-
-    public void setOnSales(Boolean onSales) {
-        this.onSales = onSales;
     }
 
     public String getImages() {

@@ -49,4 +49,4 @@ app:
   file:
     storage:
       location: media-storage
-      max-size: 2048000
+      max-size: 2048000 #

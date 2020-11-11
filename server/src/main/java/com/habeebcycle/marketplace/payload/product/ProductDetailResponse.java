@@ -4,6 +4,7 @@ import com.habeebcycle.marketplace.model.entity.Image;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ProductDetailResponse {
@@ -11,8 +12,8 @@ public class ProductDetailResponse {
     private String shortDescription;
     private BigDecimal regularPrice;
     private BigDecimal salesPrice;
-    private Instant salesStart;
-    private Instant salesEnd;
+    private LocalDateTime salesStart;
+    private LocalDateTime salesEnd;
     private String sku;
     private String type;
     private String status;
@@ -27,7 +28,7 @@ public class ProductDetailResponse {
     public ProductDetailResponse() {}
 
     public ProductDetailResponse(String shortDescription, BigDecimal regularPrice, BigDecimal salesPrice,
-                                 Instant salesStart, Instant salesEnd, String sku, String type, String status,
+                                 LocalDateTime salesStart, LocalDateTime salesEnd, String sku, String type, String status,
                                  String weight, String dimension, String notes, Integer stock, Boolean featured,
                                  Boolean onSales, List<Image> images) {
         this.shortDescription = shortDescription;
@@ -71,19 +72,19 @@ public class ProductDetailResponse {
         this.salesPrice = salesPrice;
     }
 
-    public Instant getSalesStart() {
+    public LocalDateTime getSalesStart() {
         return salesStart;
     }
 
-    public void setSalesStart(Instant salesStart) {
+    public void setSalesStart(LocalDateTime salesStart) {
         this.salesStart = salesStart;
     }
 
-    public Instant getSalesEnd() {
+    public LocalDateTime getSalesEnd() {
         return salesEnd;
     }
 
-    public void setSalesEnd(Instant salesEnd) {
+    public void setSalesEnd(LocalDateTime salesEnd) {
         this.salesEnd = salesEnd;
     }
 

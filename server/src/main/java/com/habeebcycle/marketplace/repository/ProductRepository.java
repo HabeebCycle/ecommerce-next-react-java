@@ -40,10 +40,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("SELECT COUNT(*) FROM Product")
     Long findNumberOfProducts();
 
-    @Query("SELECT COUNT(*) FROM Product p WHERE p.category = :catId")
-    Long findNumberOfProductInCategory(@Param("catId") Long catId);
-
-    @Query("SELECT c FROM ProductCategory c where c.parent = :catId")
-    List<ProductCategory> findAllChildrenCategory(@Param("catId") Long catId);
+    @Query("SELECT COUNT(*) FROM Product p WHERE p.category = :category")
+    Long findNumberOfProductInCategory(@Param("category") ProductCategory category);
 
 }

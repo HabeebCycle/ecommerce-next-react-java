@@ -143,6 +143,6 @@ public class ProductCategoryService {
             slug = slug + "-" + ((int)(Math.random() + 1));
             formatSlug(slug);
         }
-        return slug;
+        return slug.toLowerCase();
     }
 }

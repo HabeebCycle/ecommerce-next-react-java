@@ -4,6 +4,7 @@ import com.habeebcycle.marketplace.model.audit.UserDateAudit;
 import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
 
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -19,9 +20,10 @@ public class Product extends UserDateAudit {
 
     @NotBlank @Size(min = 3, max = 255) private String title;
     @NotBlank private String slug;
-    @Digits(integer = 10, fraction = 2) private BigDecimal price;
+    @DecimalMin(value = "0.0")  private BigDecimal price;
     @Size(max = 17665535) private String description;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false) @JoinColumn(name = "category") private ProductCategory category;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "category") private ProductCategory category;
     private Long thumbnail;
     private Long owner;
 

@@ -5,8 +5,8 @@ import javax.validation.constraints.Size;
 
 public class ProductCategoryRequest {
 
-    private String name;
-    String slug;
+    @NotBlank @Size(min = 3, max = 255) private String name;
+    @NotBlank String slug;
     private String description;
     private Long parent;
     private String url;
