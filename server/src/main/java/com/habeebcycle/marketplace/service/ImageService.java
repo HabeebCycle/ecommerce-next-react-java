@@ -85,7 +85,7 @@ public class ImageService {
         imageRepository.deleteAll(imageRepository.findAllById(ids));
     }
 
-    public void deleteAllImages(){ /*deleteAllFiles();*/ imageRepository.deleteAll();}
+    public void deleteAllImages(){ deleteAllFiles(); imageRepository.deleteAll();}
 
     public Image storeFile(MultipartFile file, String folder, String name, String url) {
         Image image = null;

@@ -37,4 +37,16 @@ public class ImageController {
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(imageService.getMimeType(imageName, request))).body(imgRes);
     }
+
+    @GetMapping("product/{imageName}")
+    public ResponseEntity<?> getProductImage(@PathVariable String imageName, HttpServletRequest request){
+        byte[] imgRes = new byte[0];
+        Optional<Image> image = imageService.getImageByName(imageName);
+        if(image.isPresent()){
+            imgRes = imageService.getFile(image.get(), "product");
+        }
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType(imageService.getMimeType(imageName, request))).body(imgRes);
+    }
 }

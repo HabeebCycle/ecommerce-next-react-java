@@ -89,12 +89,18 @@ public class ProductCategoryService {
         response.setCreatedAt(category.getCreatedAt());
         response.setUpdatedAt(category.getUpdatedAt());
 
-        userService.getUser(category.getCreatedBy()).ifPresent(user -> {
-            response.setCreatedBy(new UserSummary(user.getId(), user.getUsername(), user.getName()));
-        });
-        userService.getUser(category.getUpdatedBy()).ifPresent(user -> {
-            response.setUpdatedBy(new UserSummary(user.getId(), user.getUsername(), user.getName()));
-        });
+        Long catId = category.getCreatedBy();
+        if(catId != null) {
+            userService.getUser(category.getCreatedBy()).ifPresent(user -> {
+                response.setCreatedBy(new UserSummary(user.getId(), user.getUsername(), user.getName()));
+            });
+            userService.getUser(category.getUpdatedBy()).ifPresent(user -> {
+                response.setUpdatedBy(new UserSummary(user.getId(), user.getUsername(), user.getName()));
+            });
+        }else{
+            response.setCreatedBy(null);
+            response.setUpdatedBy(null);
+        }
         return response;
     }
 

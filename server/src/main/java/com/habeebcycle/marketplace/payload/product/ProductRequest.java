@@ -180,4 +180,29 @@ public class ProductRequest {
     public void setStock(Integer stock) {
         this.stock = stock;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "\"title\":\"" + title + "\"" +
+                ",\"slug\":\"" + slug + "\"" +
+                ",\"price\":" + price +
+                ",\"description\":\"" + description + "\"" +
+                ",\"category\":" + category +
+                ",\"owner\":" + owner +
+                ",\"url\":\"" + url + "\"" +
+                ",\"shortDescription\":\"" + shortDescription + "\"" +
+                ",\"regularPrice\":" + regularPrice +
+                ",\"salesPrice\":" + salesPrice +
+                ",\"salesStart\":" + (salesStart != null ? "\"" + salesStart + "\"" : null) +
+                ",\"salesEnd\":" + (salesEnd != null ? "\"" + salesEnd + "\"" : null) +
+                ",\"sku\":\"" + sku + "\"" +
+                ",\"type\":\"" + type + "\"" +
+                ",\"status\":\"" + status + "\"" +
+                ",\"weight\":\"" + weight + "\"" +
+                ",\"dimension\":\"" + dimension + "\"" +
+                ",\"notes\":\"" + notes + "\"" +
+                ",\"stock\":" + stock +
+                "}";
+    }
 }

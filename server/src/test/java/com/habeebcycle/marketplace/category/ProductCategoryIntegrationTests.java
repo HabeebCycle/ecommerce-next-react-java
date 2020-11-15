@@ -39,7 +39,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         properties = {"spring.main.allow-bean-definition-overriding=true", "spring.codec.max-in-memory-size=20MB",
                 "spring.datasource.url=jdbc:h2:mem:marketplace-db", "spring.jpa.properties.hibernate.dialect=",
                 "app.file.storage.location=media-test"})
-public class ProductCategoryTests {
+public class ProductCategoryIntegrationTests {
 
     @Autowired
     private WebApplicationContext webApplicationContext;
@@ -52,8 +52,6 @@ public class ProductCategoryTests {
 
     @Autowired
     ImageService imageService;
-
-    private
 
     @BeforeEach
     void setUpDB(){

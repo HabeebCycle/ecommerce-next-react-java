@@ -104,8 +104,8 @@ public class ProductController {
     @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.APPLICATION_JSON_VALUE},
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ProductResponse addNewProduct(@RequestPart(value = "product") String productJson,
-                                          @RequestPart(name = "file", required = false) MultipartFile file,
-                                          @RequestPart(name = "files", required = false) MultipartFile... files) {
+                                          @RequestPart(value = "file", required = false) MultipartFile file,
+                                          @RequestPart(value = "files", required = false) MultipartFile... files) {
 
         try {
             ProductRequest request = productService.convertProductString(productJson);
@@ -118,12 +118,15 @@ public class ProductController {
             details.setFeatured(false);
             details.setImages(images);
 
+            ProductCategory category = productService.getCategory(request.getCategory());
+            category = category == null ? productService.getCategory(1L) : category;
+
             Product product = new Product();
             product.setTitle(request.getTitle());
             product.setSlug(slug);
             product.setPrice(request.getPrice());
             product.setDescription(request.getDescription());
-            product.setCategory(productService.getCategory(request.getCategory()));
+            product.setCategory(category);
             product.setThumbnail(thumbnail);
             product.setProductDetails(details);
             product.setOwner(request.getOwner());
