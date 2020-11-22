@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.habeebcycle.marketplace.model.entity.Image;
 import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
-import com.habeebcycle.marketplace.model.entity.util.ChildCategory;
+import com.habeebcycle.marketplace.model.entity.util.ResponseCategory;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryRequest;
 import com.habeebcycle.marketplace.payload.category.ProductCategoryResponse;
 import com.habeebcycle.marketplace.payload.user.UserSummary;
@@ -12,6 +12,7 @@ import com.habeebcycle.marketplace.repository.ProductCategoryRepository;
 import com.habeebcycle.marketplace.util.ApplicationConstants;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +83,7 @@ public class ProductCategoryService {
     }
 
     public ProductCategoryResponse getCategoryResponse(ProductCategory category){
-        List<ChildCategory> children = collateChildren(category.getId());
+        List<ResponseCategory> children = collateChildren(category.getId());
         Image image = category.getImage() != null ? imageService.getImage(category.getImage()) : null;
         ProductCategoryResponse response = new ProductCategoryResponse(category.getId(), category.getName(), category.getSlug(),
                 category.getDescription(), children, image);
@@ -104,12 +105,14 @@ public class ProductCategoryService {
         return response;
     }
 
-    public List<ChildCategory> collateChildren(Long parent){
-        List<ChildCategory> childCategories = new ArrayList<>();
+    public List<ResponseCategory> collateChildren(Long parent){
+        List<ResponseCategory> childCategories = new ArrayList<>();
         getChildrenCategory(parent)
                 .forEach(category -> {
-                    ChildCategory childCategory = new ChildCategory(category.getId(), category.getName(),
-                            category.getSlug(), ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + category.getId());
+                    String catLink = ServletUriComponentsBuilder.fromCurrentContextPath()
+                            .path(ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + category.getId()).toUriString();
+                    ResponseCategory childCategory = new ResponseCategory(category.getId(), category.getName(),
+                            category.getSlug(), catLink);
                     childCategories.add(childCategory);
                 });
         return childCategories;

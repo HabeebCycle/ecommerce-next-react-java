@@ -87,6 +87,10 @@ public class ImageService {
 
     public void deleteAllImages(){ deleteAllFiles(); imageRepository.deleteAll();}
 
+    public Long getImageCount(){
+        return imageRepository.count();
+    }
+
     public Image storeFile(MultipartFile file, String folder, String name, String url) {
         Image image = null;
         if(file == null || file.isEmpty() || !isMimeTypeSupported(file.getContentType()) || file.getSize() > fileMaxSize){
@@ -117,23 +121,20 @@ public class ImageService {
             image.setExternal(false);
 
             Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException ignored) {}
+        } catch (IOException ex) {ex.printStackTrace();}
         return image;
     }
 
-    public Boolean deleteFile(Long id, String folder){
+    public void deleteFile(Long id, String folder){
         if(id != null) {
             try {
                 Image image = getImage(id);
                 if (image != null) {
                     Path filePath = getNormalizedPath(fileStorageLocation + "\\" + folder + "\\" + image.getName());
-                    return Files.deleteIfExists(filePath);
+                    Files.deleteIfExists(filePath);
                 }
-            } catch (IOException e) {
-                return false;
-            }
+            } catch (IOException ignored) {}
         }
-        return false;
     }
 
     public byte[] getFile(Image image, String folder){

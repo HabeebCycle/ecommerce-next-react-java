@@ -6,7 +6,7 @@ type Product {
     slug: String
     price: Float
     description: String
-    category: ProductCategoryResponse
+    category: ResponseCategory
     thumbnail: Image
     productDetails: ProductDetails
     owner: User

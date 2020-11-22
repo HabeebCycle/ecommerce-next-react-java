@@ -3,7 +3,6 @@ package com.habeebcycle.marketplace.payload.product;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 public class ProductRequest {
@@ -194,7 +193,7 @@ public class ProductRequest {
                 ",\"shortDescription\":\"" + shortDescription + "\"" +
                 ",\"regularPrice\":" + regularPrice +
                 ",\"salesPrice\":" + salesPrice +
-                ",\"salesStart\":" + (salesStart != null ? "\"" + salesStart + "\"" : null) +
+                ",\"salesStart\":" + (salesStart != null ? "\"" + salesStart  + "\"" : null) +
                 ",\"salesEnd\":" + (salesEnd != null ? "\"" + salesEnd + "\"" : null) +
                 ",\"sku\":\"" + sku + "\"" +
                 ",\"type\":\"" + type + "\"" +

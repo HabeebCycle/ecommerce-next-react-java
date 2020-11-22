@@ -1,19 +1,19 @@
 package com.habeebcycle.marketplace.model.entity.util;
 
-public class ChildCategory {
+public class ResponseCategory {
     private Long id;
     private String name;
     private String slug;
     private String link;
 
-    public ChildCategory(Long id, String name, String slug, String link) {
+    public ResponseCategory(Long id, String name, String slug, String link) {
         this.id = id;
         this.name = name;
         this.slug = slug;
         this.link = link;
     }
 
-    public ChildCategory() {
+    public ResponseCategory() {
     }
 
     public Long getId() {

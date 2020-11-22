@@ -8,14 +8,17 @@ import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
 import com.habeebcycle.marketplace.model.entity.product.Product;
 import com.habeebcycle.marketplace.model.entity.product.ProductDetails;
 import com.habeebcycle.marketplace.model.entity.user.User;
+import com.habeebcycle.marketplace.model.entity.util.ResponseCategory;
 import com.habeebcycle.marketplace.payload.product.ProductDetailResponse;
 import com.habeebcycle.marketplace.payload.product.ProductRequest;
 import com.habeebcycle.marketplace.payload.product.ProductResponse;
 import com.habeebcycle.marketplace.payload.user.UserSummary;
 import com.habeebcycle.marketplace.repository.ProductRepository;
+import com.habeebcycle.marketplace.util.ApplicationConstants;
 import com.habeebcycle.marketplace.util.HelperClass;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -179,7 +182,7 @@ public class ProductService {
 
         Image thumbnail = product.getThumbnail() != null ? imageService.getImage(product.getThumbnail()) : null;
 
-        List<Long> imgSplit = HelperClass.getLongListFromString(pDetails.getImages());
+        List<Long> imgSplit = pDetails.getImages() != null ? HelperClass.getLongListFromString(pDetails.getImages()) : null;
         List<Image> images = imgSplit != null ? imageService.getImages(imgSplit) : null;
 
         User ownerUser = product.getOwner() != null ?
@@ -196,8 +199,13 @@ public class ProductService {
                 pDetails.getSku(), pDetails.getType(), pDetails.getStatus(), pDetails.getWeight(), pDetails.getDimension(),
                 pDetails.getNotes(), pDetails.getStock(), pDetails.getFeatured(), onSale, images);
 
+        String catLink = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path(ApplicationConstants.PRODUCT_CATEGORY_ENDPOINT + "/" + product.getCategory().getId()).toUriString();
+        ResponseCategory category = new ResponseCategory(product.getCategory().getId(), product.getCategory().getName(),
+                product.getCategory().getSlug(), catLink);
+
         ProductResponse response = new ProductResponse(product.getId(), product.getTitle(), product.getSlug(), product.getPrice(),
-                product.getDescription(), product.getCategory(), thumbnail, owner, detailResponse);
+                product.getDescription(), category, thumbnail, owner, detailResponse);
 
         response.setCreatedAt(product.getCreatedAt());
         response.setUpdatedAt(product.getUpdatedAt());

@@ -1,5 +1,6 @@
 package com.habeebcycle.marketplace.controller.product;
 
+import com.habeebcycle.marketplace.exception.ApplicationException;
 import com.habeebcycle.marketplace.exception.BadRequestException;
 import com.habeebcycle.marketplace.exception.NotFoundException;
 import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
@@ -151,29 +152,33 @@ public class ProductController {
         return new APIResponse(true, "Changes Done", HttpStatus.OK);
     }
 
-    @PutMapping(path = "/images/{id}/{img}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PutMapping(path = "/image-update/{id}/{img}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public APIResponse updateImage(@PathVariable Long id, @PathVariable Long img,
-                             @RequestPart(name = "file", required = false) MultipartFile file){
+                             @RequestPart(name = "file") MultipartFile file){
         Product product = productService.getProductById(id)
                 .orElseThrow(() -> new NotFoundException("Product Category", "Id", "" + id));
 
-        List<Long> imgList = HelperClass.getLongListFromString(product.getProductDetails().getImages());
+        try {
+            List<Long> imgList = HelperClass.getLongListFromString(product.getProductDetails().getImages());
 
-        if(imgList != null && imgList.contains(img)){
-            productService.updateImage(img, file, product.getTitle(), "");
-        }else if(product.getThumbnail().equals(img)){
-            productService.updateImage(product.getThumbnail(), file,
-                    product.getTitle(), "");
-        }else{
-            return new APIResponse(false, "Changes Done", HttpStatus.NOT_FOUND);
+            if (file != null && imgList != null && imgList.contains(img)) {
+                productService.updateImage(img, file, product.getTitle(), "");
+            } else if (file != null && product.getThumbnail().equals(img)) {
+                productService.updateImage(product.getThumbnail(), file,
+                        product.getTitle(), "");
+            } else {
+                return new APIResponse(false, "Changes Failed or No file uploaded", HttpStatus.NOT_FOUND);
+            }
+        }catch(Exception ex){
+            throw new ApplicationException(ex.getMessage(), ex.getCause());
         }
 
         return new APIResponse(true, "Changes Done", HttpStatus.OK);
     }
 
-    @PutMapping(path = "/images/{id}/{main}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PutMapping(path = "/image-insert/{id}/{main}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public APIResponse addImage(@PathVariable Long id, @PathVariable Boolean main,
-                                    @RequestPart(name = "file", required = false) MultipartFile file){
+                                    @RequestPart(name = "file") MultipartFile file){
         Product product = productService.getProductById(id)
                 .orElseThrow(() -> new NotFoundException("Product Category", "Id", "" + id));
 
@@ -209,6 +214,9 @@ public class ProductController {
                     ? productService.formatSlug(request.getSlug()) : request.getSlug();
             ProductDetails details = productService.getProductDetails(request);
 
+            details.setFeatured(product.getProductDetails().getFeatured());
+            details.setImages(product.getProductDetails().getImages());
+
             product.setTitle(request.getTitle());
             product.setSlug(slug);
             product.setPrice(request.getPrice());
@@ -226,7 +234,7 @@ public class ProductController {
         }
     }
 
-    @DeleteMapping("/{catId}")
+    @DeleteMapping("/{id}")
     public void deleteProduct(@PathVariable Long id){
         Product product = productService.getProductById(id).orElse(null);
         if(product != null){

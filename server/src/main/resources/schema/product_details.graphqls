@@ -13,5 +13,6 @@ type ProductDetails {
     dimension: String
     notes: String
     featured: Boolean
+    onSales: Boolean
     images: [Image]
 }

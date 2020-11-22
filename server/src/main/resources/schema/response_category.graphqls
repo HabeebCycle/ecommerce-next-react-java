@@ -1,6 +1,6 @@
 # Product Category Child schema
 
-type ChildCategory{
+type ResponseCategory{
     id: ID!
     name: String
     slug: String

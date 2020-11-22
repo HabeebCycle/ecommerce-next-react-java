@@ -5,7 +5,7 @@ type ProductCategoryResponse{
     name: String
     slug: String
     description: String
-    children: [ChildCategory]
+    children: [ResponseCategory]
     image: Image
     createdBy: User
     updatedBy: User

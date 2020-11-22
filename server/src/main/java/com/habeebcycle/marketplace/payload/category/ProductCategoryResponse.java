@@ -1,7 +1,7 @@
 package com.habeebcycle.marketplace.payload.category;
 
 import com.habeebcycle.marketplace.model.entity.Image;
-import com.habeebcycle.marketplace.model.entity.util.ChildCategory;
+import com.habeebcycle.marketplace.model.entity.util.ResponseCategory;
 import com.habeebcycle.marketplace.payload.user.UserSummary;
 
 import java.time.Instant;
@@ -12,7 +12,7 @@ public class ProductCategoryResponse {
     private String name;
     private String slug;
     private String description;
-    private List<ChildCategory> children;
+    private List<ResponseCategory> children;
     private Image image;
     private Instant createdAt;
     private Instant updatedAt;
@@ -22,7 +22,7 @@ public class ProductCategoryResponse {
     public ProductCategoryResponse() {
     }
 
-    public ProductCategoryResponse(Long id, String name, String slug, String description, List<ChildCategory> children, Image image) {
+    public ProductCategoryResponse(Long id, String name, String slug, String description, List<ResponseCategory> children, Image image) {
         this.id = id;
         this.name = name;
         this.slug = slug;
@@ -63,11 +63,11 @@ public class ProductCategoryResponse {
         this.description = description;
     }
 
-    public List<ChildCategory> getChildren() {
+    public List<ResponseCategory> getChildren() {
         return children;
     }
 
-    public void setChildren(List<ChildCategory> children) {
+    public void setChildren(List<ResponseCategory> children) {
         this.children = children;
     }
 
