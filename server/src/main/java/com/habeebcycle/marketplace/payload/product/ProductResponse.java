@@ -1,7 +1,6 @@
 package com.habeebcycle.marketplace.payload.product;
 
 import com.habeebcycle.marketplace.model.entity.Image;
-import com.habeebcycle.marketplace.model.entity.category.ProductCategory;
 import com.habeebcycle.marketplace.model.entity.util.ResponseCategory;
 import com.habeebcycle.marketplace.payload.user.UserSummary;
 import org.springframework.web.bind.annotation.ResponseBody;

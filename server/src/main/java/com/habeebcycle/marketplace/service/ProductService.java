@@ -16,6 +16,7 @@ import com.habeebcycle.marketplace.payload.user.UserSummary;
 import com.habeebcycle.marketplace.repository.ProductRepository;
 import com.habeebcycle.marketplace.util.ApplicationConstants;
 import com.habeebcycle.marketplace.util.HelperClass;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -176,7 +177,7 @@ public class ProductService {
         return details;
     }
 
-    public ProductResponse getProductResponse(Product product){
+    public ProductResponse getProductResponse(@NotNull Product product){
         /*TODO: Add Product variations here*/
         ProductDetails pDetails = product.getProductDetails();
 

@@ -26,6 +26,7 @@ public class Product extends UserDateAudit {
     @JoinColumn(name = "category") private ProductCategory category;
     private Long thumbnail;
     private Long owner;
+    private Boolean publish;
 
     @Embedded private ProductDetails productDetails;
 
@@ -99,5 +100,13 @@ public class Product extends UserDateAudit {
 
     public void setProductDetails(ProductDetails productDetails) {
         this.productDetails = productDetails;
+    }
+
+    public Boolean getPublish() {
+        return publish;
+    }
+
+    public void setPublish(Boolean status) {
+        this.publish = status;
     }
 }

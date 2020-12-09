@@ -19,6 +19,7 @@ public class ProductCategory extends UserDateAudit {
     private String description;
     private Long parent;
     private Long image;
+    private Boolean status;
 
     public ProductCategory() {
     }
@@ -75,5 +76,13 @@ public class ProductCategory extends UserDateAudit {
 
     public void setImage(Long image) {
         this.image = image;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

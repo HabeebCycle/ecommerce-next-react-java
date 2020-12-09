@@ -14,6 +14,7 @@ public class ProductRequest {
     private Long category;
     private Long owner;
     private String url;
+    private Boolean publish;
 
     private String shortDescription;
     private BigDecimal regularPrice;
@@ -180,6 +181,14 @@ public class ProductRequest {
         this.stock = stock;
     }
 
+    public Boolean getPublish() {
+        return publish;
+    }
+
+    public void setPublish(Boolean publish) {
+        this.publish = publish;
+    }
+
     @Override
     public String toString() {
         return "{" +
@@ -190,6 +199,7 @@ public class ProductRequest {
                 ",\"category\":" + category +
                 ",\"owner\":" + owner +
                 ",\"url\":\"" + url + "\"" +
+                ",\"publish\":" + publish +
                 ",\"shortDescription\":\"" + shortDescription + "\"" +
                 ",\"regularPrice\":" + regularPrice +
                 ",\"salesPrice\":" + salesPrice +
